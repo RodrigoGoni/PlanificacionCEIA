@@ -85,8 +85,9 @@
 \usepackage{relsize} 
 \usepackage{url}
 %\usepackage[plainpages=false,breaklinks=true,pdfpagelabels=true,pagebackref]{hyperref}
-\usepackage[english, spanish]{babel}
+\usepackage[T1]{fontenc} 
 \usepackage[utf8]{inputenc}
+\usepackage[english, spanish]{babel}
 \usepackage[]{graphicx}
 \usepackage{lastpage}
 \usepackage{pdflscape}
