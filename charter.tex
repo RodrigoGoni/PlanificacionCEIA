@@ -160,64 +160,82 @@ Usuario final &         -          &        -      	&     -   	\\ \hline
 \begin{itemize}
 \item Cliente: Ciclistas de distintos tipos que buscan optimizar la comodidad o el rendimiento de su bicicleta a través de ajustes personalizados.
 
-\item Responsable: Rodrigo Goñi es el líder del proyecto de optimización biomecánica asistida por IA, originado por una necesidad personal de ajustar su bicicleta. Es ingeniero en IA y robótica.
+\item Responsable:\authorname es el líder del proyecto de optimización biomecánica asistida por IA, originado por una necesidad personal de ajustar su bicicleta. Es ingeniero en Mecatrónica.
 
-\item Orientador: Fernando Corteggiano, Ingeniero Electricista y Magister en Ciencias de la Ingeniería de la UNRC, es director y profesor adjunto, ya ha dirigido diversas tesis, va a aportar su experiencia en electrónica, telecomunicaciones y software, para definir el alcance y requerimientos del sistema.
+\item Orientador: \supname	, Ingeniero Electricista y Magister en Ciencias de la Ingeniería de la UNRC, es director y profesor adjunto, ya ha dirigido diversas tesis, va a aportar su experiencia en electrónica, telecomunicaciones y software, para definir el alcance y requerimientos del sistema.
 \end{itemize}
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
-
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
-
-Se recomienda que sea solo un párrafo que continúe con la idea de la frase ``el propósito de este proyecto es...'' (omitir la frase, ya que está en el título de la sección).
-\end{consigna}
+El propósito de este proyecto es desarrollar un sistema inteligente y personalizado que, mediante la integración de la detección de pose por redes neuronales y el análisis exhaustivo de datos provenientes de sensores de ciclismo, optimice los parámetros biomecánicos de la bicicleta. Esto incluye la altura y posición del sillín, la longitud de las bielas, la altura y ancho del manillar. El objetivo principal es maximizar la potencia y eficiencia del pedaleo, minimizar el riesgo de lesiones y equilibrar estos factores con la aerodinámica.
+El objetivo fundamental de este sistema radica en ofrecer al ciclista la capacidad de realizar autoajustes frecuentes, de forma autónoma y a un costo significativamente menor que las alternativas tradicionales, democratizando el acceso a una biomecánica de precisión y permitiendo una mejora continua del rendimiento y la prevención de lesiones.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
-
-Se refiere al trabajo que se va a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto. Por ejemplo:
+El presente proyecto incluye el desarrollo de un sistema inteligente y personalizado para la optimización biomecánica del ciclismo, asistida por inteligencia artificial.
 
 El proyecto incluye:
 \begin{itemize}
-	\item Ítem 1.
-	\item Ítem 2.
-		\begin{itemize}
-		\item Subítem 1.
-		\item Subítem 2.
-		\item ...
-		\end{itemize}
-	\item ...
-	
+    \item \textbf{Desarrollo de un sistema de optimización personalizado:} Proporcionará recomendaciones para el ajuste biomecánico de la bicicleta, buscando maximizar el rendimiento, medido por la potencia y velocidad, la eficiencia y prevenir lesiones.
+
+    \item \textbf{Ciclo continuo de análisis y retroalimentación:} El sistema funcionará a través de las siguientes etapas:
+        \begin{itemize}
+            \item \textbf{Captura de Datos:}
+                \begin{itemize}
+                 	\item Calibración de la cámara.
+                    \item Grabación de videos del ciclista pedaleando.
+                    \item Recopilación simultánea de datos de rendimiento mediante sensores de potencia, cadencia y velocidad.
+                \end{itemize}
+            \item \textbf{Análisis y Modelado:}
+                \begin{itemize}
+                    \item Análisis de Movimiento: Uso de red neuronal de estimación de pose para extraer coordenadas 2D de puntos clave del cuerpo del ciclista desde los videos.
+                    \item Análisis Cinemático: Estudio de ángulos de articulaciones, fluidez del pedaleo y variabilidad del movimiento.
+                    \item Modelo Biomecánico: Creación de un modelo digital del sistema ciclista y bicicleta para simular el impacto de los ajustes en la potencia y el riesgo de lesión.
+                \end{itemize}
+            \item \textbf{Optimización Integral:} Un algoritmo de optimización analizará combinaciones para lograr el equilibrio perfecto entre:
+                \begin{itemize}
+                    \item Ajuste Biomecánico: Determinación de la configuración óptima de componentes.
+                    \item Aerodinámica: Evaluación de la postura del ciclista para la resistencia del aire, buscando la posición más aerodinámica y sostenible.
+                    \item Prevención de Lesiones: Penalización de configuraciones que aumenten el estrés en articulaciones.
+                \end{itemize}
+            \item \textbf{Recomendación y Re-evaluación:} Generación de un reporte con recomendaciones claras para ajustar la bicicleta, permitiendo nuevas sesiones de captura de datos para refinar el ajuste.
+        \end{itemize}
+
+    \item \textbf{Adquisición y uso de datos:}
+        \begin{itemize}
+            \item Videos de ciclismo grabados desde el lateral y el frontal.
+            \item Datos de sensores sincronizados; potencia, cadencia y velocidad.
+            \item Datos antropométricos del ciclista y configuración actual de la bicicleta.
+            \item Utilización de recursos propios y entorno controlado para pruebas sistemáticas y sincronización precisa.
+        \end{itemize}
 \end{itemize}
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
-
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-
+El presente proyecto no incluye:
+\begin{itemize}
+    
+    \item El desarrollo de hardware personalizado para la captura de datos, más allá de la integración con sensores comerciales existentes.
+    \item El entrenamiento de la red neuronal de detección de pose desde cero. Se espera utilizar o adaptar redes neuronales preexistentes.
+    \item La integración con todos los posibles modelos de bicicletas y componentes del mercado.
+    \item La simulación de factores externos complejos como condiciones climáticas extremas o interacciones con el tráfico.
+\end{itemize}
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-``Para el desarrollo del presente proyecto se supone que: ...''
-
+Para el desarrollo del presente proyecto se supone que:
 \begin{itemize}
-	\item Supuesto 1.
-	\item Supuesto 2.
-	\item ...
+\item Se dispondrá de un rodillo de entrenamiento inteligente y sus respectivos sensores (potenciómetro, cadencia, velocidad) para la captura de datos en un entorno controlado y la realización de pruebas sistemáticas.
+\item Se tendrá acceso a una cámara de video con capacidad para grabar en alta resolución.
+\item La red neuronal de detección de pose (como Keypoint R-CNN o MediaPipe) a utilizar será lo suficientemente robusta y precisa para extraer los puntos clave del cuerpo del ciclista necesarios para el análisis biomecánico, y que su rendimiento será adecuado para el procesamiento de video.
+\item Existirá suficiente disponibilidad de datos propios y de la comunidad.
+\item El entorno de desarrollo y las herramientas de software necesarias son adecuadas.
+\item Se contará con el tiempo y los recursos humanos necesarios para la investigación, desarrollo, implementación y realización de pruebas del sistema, incluyendo la mano de obra propia para la ejecución del proyecto.
+\item Se contará con la revisión y retroalimentación constante del director del proyecto, \supname	, para asegurar la correcta orientación técnica y académica.
+\item Las condiciones de iluminación durante la captura de video serán adecuadas para permitir una detección de pose precisa.
+\item El proyecto se centrará en optimizaciones biomecánicas para el ciclismo en carretera o interior en rodillo.
+\item Las variaciones individuales en la anatomía y flexibilidad de los ciclistas podrán ser adecuadamente modeladas y tenidas en cuenta por el algoritmo de optimización.
 \end{itemize}
-
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
 \section{6. Product Backlog}
 \label{sec:backlog}
