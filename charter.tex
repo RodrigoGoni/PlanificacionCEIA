@@ -240,49 +240,98 @@ Para el desarrollo del presente proyecto se supone que:
 \section{6. Product Backlog}
 \label{sec:backlog}
 
-El Product Backlog debe organizarse en cuatro \textbf{\textit{\'{e}picas}} fundamentales del proyecto. Cada \'{e}pica debe contener al menos dos historias de usuario que describan funcionalidades clave.
-
-El Product Backlog debe permitir interpretar cómo será el proyecto y su funcionalidad. Se deben indicar claramente las prioridades entre las historias de usuario y si hay alguna opcional.
-
-Las historias de usuario deben ser breves, claras y medibles, expresando el rol, la necesidad y el propósito de cada funcionalidad. También deben tener una prioridad definida para facilitar la planificación de los sprints.
-
-Cada historia de usuario debe incluir una ponderación en \textit{Story Points}, un número entero que representa el tama\~no relativo de la historia. El criterio para calcular los Story Points debe indicarse explícitamente.
-
-Las historias deben seguir el formato: ``\textit{Como [rol], quiero [tal cosa] para [tal otra cosa]}''.
-
-Las \'{e}picas deben estructurarse de la siguiente forma:
-
 \begin{itemize}
-  \item \textbf{\'{E}pica 1}
+  \item \textbf{Épica 1: Adquisición y Preprocesamiento de Datos Biomecánicos}
     \begin{itemize}
-      \item HU1
-      \item HU2
+      \item \textbf{HU1:} Como ciclista, quiero que el sistema tome mi imagen de pedaleo para analizar mi postura.
+        \begin{itemize}
+          \item Dificultad: 3
+          \item Complejidad: 2
+          \item Incertidumbre: 2
+          \item Suma: 7 $\rightarrow$ Story Points: 8
+        \end{itemize}
+      \item \textbf{HU2:} Como ingeniero, quiero consolidar un proceso de obtención de datos coordinado y automatizado para asegurar la eficiencia del análisis.
+        \begin{itemize}
+          \item Dificultad: 4
+          \item Complejidad: 4
+          \item Incertidumbre: 3
+          \item Suma: 11 $\rightarrow$ Story Points: 13
+        \end{itemize}
+      \item \textbf{HU3:} Como ingeniero en inteligencia artificial, quiero aplicar técnicas de visión por computadora para obtener automáticamente los puntos clave de mi cuerpo en los videos de pedaleo, de manera que el análisis biomecánico sea preciso.
+        \begin{itemize}
+          \item Dificultad: 5
+          \item Complejidad: 5
+          \item Incertidumbre: 4
+          \item Suma: 14 $\rightarrow$ Story Points: 21
+        \end{itemize}
+      \item \textbf{HU4:} Como científico de datos, quiero realizar un análisis exploratorio de los datos y filtrarlos correctamente para asegurar la calidad de la información utilizada en los modelos.
+        \begin{itemize}
+          \item Dificultad: 3
+          \item Complejidad: 3
+          \item Incertidumbre: 2
+          \item Suma: 8 $\rightarrow$ Story Points: 8
+        \end{itemize}
     \end{itemize}
-  \item \textbf{\'{E}pica 2}
+  \item \textbf{Épica 2: Modelado y Optimización Biomecánica}
     \begin{itemize}
-      \item HU3
-      \item HU4
+      \item \textbf{HU5:} Como ingeniero de software, quiero que el sistema simule las condiciones de pedaleo y el impacto de los ajustes mecánicos para predecir los resultados de la optimización.
+        \begin{itemize}
+          \item Dificultad: 4
+          \item Complejidad: 4
+          \item Incertidumbre: 3
+          \item Suma: 11 $\rightarrow$ Story Points: 13
+        \end{itemize}
+      \item \textbf{HU6:} Como ingeniero, necesito modelar un algoritmo de optimización biomecánica multi-objetivo para encontrar la configuración de bicicleta más eficiente y cómoda.
+        \begin{itemize}
+          \item Dificultad: 5
+          \item Complejidad: 5
+          \item Incertidumbre: 5
+          \item Suma: 15 $\rightarrow$ Story Points: 21
+        \end{itemize}
+      \item \textbf{HU7:} Como sistema de optimización, necesito considerar la morfología y el nivel del ciclista para ofrecer recomendaciones personalizadas y efectivas.
+        \begin{itemize}
+          \item Dificultad: 4
+          \item Complejidad: 3
+          \item Incertidumbre: 3
+          \item Suma: 10 $\rightarrow$ Story Points: 13
+        \end{itemize}
     \end{itemize}
-  \item \textbf{\'{E}pica 3}
+  \item \textbf{Épica 3: Generación de Recomendaciones y Experiencia de Usuario}
     \begin{itemize}
-      \item HU5
-      \item HU6
+      \item \textbf{HU8:} Como ciclista, quiero recibir un reporte claro y conciso con las recomendaciones de configuración de mi bicicleta para poder realizar los ajustes yo mismo.
+        \begin{itemize}
+          \item Dificultad: 3
+          \item Complejidad: 3
+          \item Incertidumbre: 2
+          \item Suma: 8 $\rightarrow$ Story Points: 8
+        \end{itemize}
+      \item \textbf{HU9:} Como usuario, quiero que la interfaz me permita ingresar fácilmente los parámetros relevantes del ciclista y la bicicleta para obtener un análisis preciso.
+        \begin{itemize}
+          \item Dificultad: 3
+          \item Complejidad: 2
+          \item Incertidumbre: 2
+          \item Suma: 7 $\rightarrow$ Story Points: 8
+        \end{itemize}
     \end{itemize}
-  \item \textbf{\'{E}pica 4}
+  \item \textbf{Épica 4: Validación y Mejora Continua del Sistema}
     \begin{itemize}
-      \item HU7
-      \item HU8
+      \item \textbf{HU10:} Como ciclista, quiero poder re-evaluar mi postura y rendimiento después de aplicar los ajustes recomendados para refinar la optimización.
+        \begin{itemize}
+          \item Dificultad: 3
+          \item Complejidad: 2
+          \item Incertidumbre: 2
+          \item Suma: 7 $\rightarrow$ Story Points: 8
+        \end{itemize}
+      \item \textbf{HU11:} Como desarrollador, necesito un entorno controlado para realizar pruebas sistemáticas y asegurar la precisión del sistema.
+        \begin{itemize}
+          \item Dificultad: 4
+          \item Complejidad: 3
+          \item Incertidumbre: 3
+          \item Suma: 10 $\rightarrow$ Story Points: 13
+        \end{itemize}
     \end{itemize}
 \end{itemize}
 
-\textbf{Reglas para definir historias de usuario:}
-\begin{itemize}
-  \item Ser concisas y claras.
-  \item Expresarlas en términos cuantificables y medibles.
-  \item No dejar margen para interpretaciones ambiguas.
-  \item Indicar claramente su prioridad y si son opcionales.
-  \item Considerar regulaciones y normas vigentes.
-\end{itemize}
 
 \section{7. Criterios de aceptación de historias de usuario}
 \label{sec:criteriosAceptacion}
