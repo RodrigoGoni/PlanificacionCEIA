@@ -473,7 +473,7 @@ A continuación se detallan las fases del modelo CRISP-DM aplicadas al proyecto.
     \item \textbf{Métricas Cuantificables y Automatizables:}
     \begin{itemize}
         \item \textbf{Reducción de la Frecuencia Cardíaca (FC) para una Potencia dada:} A una potencia de salida constante, un menor ritmo cardíaco post-ajuste indicaría una mayor eficiencia cardiovascular y un menor esfuerzo percibido. Esto es directamente medible con los sensores.
-        \item \textbf{Reducción de la Variabilidad de Ángulos Críticos:} Una menor desviación estándar en ángulos articulares clave a lo largo del ciclo de pedaleo puede indicar mayor fluidez, estabilidad y menor riesgo de lesiones. Esto es automatizable a partir del análisis cinemático.
+        \item \textbf{Reducción de la Variabilidad de Ángulos Críticos:} Una menor desviación estándar en ángulos articulares clave  a lo largo del ciclo de pedaleo puede indicar mayor fluidez, estabilidad y menor riesgo de lesiones. Esto es automatizable a partir del análisis cinemático.
     \end{itemize}
     \item \textbf{Métricas Subjetivas (para validación funcional):}
     \begin{itemize}
@@ -487,49 +487,66 @@ A continuación se detallan las fases del modelo CRISP-DM aplicadas al proyecto.
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-A partir de cada HU, descomponer en tareas concretas, técnicas y medibles:
+\begin{longtable}{@{}|l|>{\raggedright\arraybackslash}p{0.5\linewidth}|c|c|@{}}
 
-\begin{itemize}
-  \item Duración estimada: entre 2 y 8 h. Evitar tareas genéricas.
-  \item Si una tarea excede 8 h, dividirla.
-  \item Indicar prioridad relativa (Alta, Media, Baja).
-\end{itemize}
+\caption{Desglose de tareas del proyecto} \label{tab:wbs} \\
 
-\begin{table}[htpb]
-\centering
-\begin{tabularx}{\linewidth}{@{}|X|X|c|c|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0}
-Historia de usuario & Tarea técnica & Estimación & Prioridad \\ \hline
-HU1 & Tarea 1 HU1 & 6 h & Alta \\ \hline
-HU1 & Tarea 2 HU1 & 8 h & Alta \\ \hline
-HU2 & Tarea 1 HU2 & 5 h & Media \\ \hline
-HU2 & Tarea 2 HU2 & 6 h & Alta \\ \hline
-... & ... & ... & ... \\ \hline
-\end{tabularx}
-\end{table}
+\textbf{Historia de usuario} & \textbf{Tarea técnica} & \textbf{Estimación} & \textbf{Prioridad} \\ 
+\hline
+\endfirsthead
 
-\textbf{Criterios para estimar tiempos:}
-\begin{itemize}
-  \item Considerar dificultad, complejidad técnica y grado de incertidumbre de cada tarea.
-  \item Evitar subestimar el esfuerzo requerido. Si una tarea supera las 8 h, dividirla en subtareas.
-  \item Basar la estimación en la experiencia propia o en referencias de tareas similares.
-\end{itemize}
+\multicolumn{4}{c}%
+{{\tablename\ \thetable{} -- continuación de la página anterior}} \\
+\hline
+\rowcolor[HTML]{C0C0C0}
+\textbf{Historia de usuario} & \textbf{Tarea técnica} & \textbf{Estimación} & \textbf{Prioridad} \\ 
+\hline
+\endhead
 
-\textbf{Sobre la prioridad:}
-\begin{itemize}
-  \item Asignar una prioridad relativa (Alta, Media o Baja) según la relevancia funcional de la tarea y su impacto en los entregables.
-  \item Priorizar tareas que estén vinculadas a criterios de aceptación de las HU o que sean necesarias para desbloquear otras.
-  \item Incluir tareas opcionales solo si están bien justificadas.
-\end{itemize}
+\hline \multicolumn{4}{r}{{Continúa en la página siguiente}} \\ 
+\endfoot
 
-\textbf{Recomendaciones generales:}
-\begin{itemize}
-  \item Incluir al menos dos tareas por historia de usuario.
-  \item El total estimado debe ser coherente con la planificación global de unas 600 horas (la cantidad de horas sugeridas para un trabajo de posgrado).
-  \item Este desglose se utilizará en las secciones siguientes para armar el diagrama de Gantt (sección 10) y la planificación de sprints (sección 11).
-  \item Recordar que la calidad del desglose impacta directamente en la calidad de la planificación del proyecto.
-\end{itemize}
+\hline
+\endlastfoot
+
+% Contenido de la tabla
+\multicolumn{4}{|l|}{\textbf{Épica 1: Adquisición y Preprocesamiento de Datos Biomecánicos}} \\ \hline
+HU1 & Investigar y seleccionar la librería de Python para el control de la cámara. & 4 h & Alta \\ \hline
+HU1 & Desarrollar el script para iniciar/detener la grabación y guardar el video. & 8 h & Alta \\ \hline
+HU2 & Configurar la recolección de datos de sensores en sincronía con el video. & 8 h & Alta \\ \hline
+HU2 & Implementar una función para la carga de datos antropométricos y de la bicicleta. & 6 h & Media \\ \hline
+HU2 & Desarrollar el script que automatice la ejecución secuencial de la captura de video y sensores. & 8 h & Alta \\ \hline
+HU3 & Investigar y comparar modelos pre-entrenados para la detección de pose. & 8 h & Alta \\ \hline
+HU3 & Implementar el modelo seleccionado para procesar los videos y extraer coordenadas 2D de puntos clave. & 8 h & Alta \\ \hline
+HU3 & Desarrollar una función para visualizar los puntos clave superpuestos en los fotogramas para verificación. & 6 h & Media \\ \hline
+HU4 & Desarrollar scripts para la carga y visualización inicial de datos. & 8 h & Alta \\ \hline
+HU4 & Implementar filtros para suavizar el ruido en los datos de sensores y coordenadas. & 8 h & Media \\ \hline
+HU4 & Escribir funciones para detectar y gestionar valores atípicos o faltantes en las series de datos. & 6 h & Media \\ \hline
+\multicolumn{4}{|l|}{\textbf{Épica 2: Modelado y Optimización Biomecánica}} \\ \hline
+HU5 & Desarrollar el modelo físico-matemático que relacione los ángulos articulares con la potencia y la eficiencia. & 8 h & Alta \\ \hline
+HU5 & Implementar una función que reciba los parámetros de la bicicleta y simule el impacto en el modelo. & 8 h & Alta \\ \hline
+HU5 & Crear visualizaciones para mostrar los resultados de la simulación. & 6 h & Media \\ \hline
+HU6 & Investigar y seleccionar una librería de Python para algoritmos genéticos. & 8 h & Alta \\ \hline
+HU6 & Definir la función de fitness multiobjetivo. & 8 h & Alta \\ \hline
+HU6 & Implementar el algoritmo genético para que explore el espacio de soluciones y encuentre el frente de Pareto. & 8 h & Alta \\ \hline
+HU7 & Definir cómo los datos de entrada ajustarán los rangos y pesos del optimizador. & 8 h & Alta \\ \hline
+HU7 & Integrar las variables de personalización como parámetros de entrada en el modelo de simulación. & 8 h & Media \\ \hline
+HU7 & Ajustar la función de fitness para que penalice soluciones no viables según el perfil del ciclista. & 8 h & Media \\ \hline
+\multicolumn{4}{|l|}{\textbf{Épica 3: Generación de Recomendaciones y Experiencia de Usuario}} \\ \hline
+HU8 & Diseñar la estructura y contenido del reporte final en PDF. & 6 h & Alta \\ \hline
+HU8 & Desarrollar el script que genere el reporte en PDF con textos, datos y gráficos de forma automática. & 8 h & Alta \\ \hline
+HU9 & Desarrollar una interfaz de usuario simple para la entrada de datos. & 8 h & Media \\ \hline
+HU9 & Implementar validaciones de entrada para asegurar que los datos del usuario sean correctos y estén en rango. & 6 h & Baja \\ \hline
+\multicolumn{4}{|l|}{\textbf{Épica 4: Validación y Mejora Continua del Sistema}} \\ \hline
+HU10 & Implementar la funcionalidad para guardar y cargar sesiones de análisis previas. & 8 h & Media \\ \hline
+HU10 & Desarrollar un módulo que genere un reporte comparativo entre dos sesiones de un mismo ciclista. & 8 h & Media \\ \hline
+HU11 & Estructurar el proyecto para permitir pruebas unitarias de los módulos clave. & 8 h & Alta \\ \hline
+HU11 & Crear un conjunto de datos de prueba para validar el pipeline completo. & 8 h & Media \\ \hline
+HU11 & Escribir pruebas de integración que verifiquen la correcta comunicación entre los módulos del sistema. & 8 h & Media \\
+
+\end{longtable}
 
 
 \section{10. Diagrama de Gantt}
