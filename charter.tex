@@ -336,43 +336,95 @@ Para el desarrollo del presente proyecto se supone que:
 \section{7. Criterios de aceptación de historias de usuario}
 \label{sec:criteriosAceptacion}
 
-Los criterios de aceptación deben establecerse para cada historia de usuario, asegurando que se cumplan las condiciones necesarias para que la funcionalidad sea validada correctamente.
-
-Cada historia debe tener criterios medibles, específicos y verificables. Deben permitir validar que se cumple con las necesidades del usuario.
+\subsection*{Recomendaciones para redactar los criterios de aceptación}
+\begin{itemize}
+    \item Definen cuándo una historia se considera terminada.
+    \item Deben ser objetivos, verificables y medibles.
+    \item Se incluye al menos un criterio funcional, uno visual y uno técnico (si aplica) por cada historia.
+    \item Cada asignación se justifica con los criterios anteriores.
+\end{itemize}
 
 Se estructuran de forma análoga a las \'{e}picas del backlog:
 
 \begin{itemize}
-  \item \textbf{\'{E}pica 1}
+  \item \textbf{Épica 1: Adquisición y Preprocesamiento de Datos Biomecánicos}
     \begin{itemize}
-      \item Criterios de aceptación HU1
-      \item Criterios de aceptación HU2
+      \item \textbf{Criterios de aceptación HU1:}
+        \begin{itemize}
+          \item El sistema debe activar y controlar la cámara de manera autónoma para la captura de video del ciclista pedaleando. 
+          \item El ciclista debe recibir una confirmación visual y/o sonora clara de que la grabación ha comenzado y finalizado correctamente. 
+          \item Los videos capturados deben guardarse automáticamente en un formato específico. 
+        \end{itemize}
+      \item \textbf{Criterios de aceptación HU2:}
+        \begin{itemize}
+          \item Tras la subida de un video, el sistema debe iniciar automáticamente la secuencia de preprocesamiento y extracción de datos.
+          \item El ingeniero debe poder visualizar el progreso de la obtención y procesamiento de los datos en una interfaz de estado.
+          \item El sistema debe registrar un log detallado de cada paso del proceso de obtención de datos, incluyendo la hora de inicio y fin, y cualquier error.
+        \end{itemize}
+      \item \textbf{Criterios de aceptación HU3:}
+        \begin{itemize}
+          \item El algoritmo debe identificar correctamente los puntos clave del esqueleto del ciclista  en cada fotograma del video.
+          \item Los puntos clave detectados deben superponerse visualmente sobre el video original para una verificación rápida de la precisión por parte del ingeniero.
+          \item La tasa de detección de puntos clave debe ser adecuada y en un tiempo razonable.
+        \end{itemize}
+      \item \textbf{Criterios de aceptación HU4:}
+        \begin{itemize}
+          \item El sistema debe permitir la aplicación de filtros predefinidos a los datos de los puntos clave. 
+          \item Se deben generar gráficos de distribución y series temporales para cada punto clave y métrica, permitiendo la identificación visual de anomalías.
+          \item La aplicación de filtros debe reducir el ruido en los datos al menos en un 20\% sin perder información relevante, según métricas preestablecidas.
+        \end{itemize}
     \end{itemize}
-  \item \textbf{\'{E}pica 2}
+  \item \textbf{Épica 2: Modelado y Optimización Biomecánica}
     \begin{itemize}
-      \item Criterios de aceptación HU3
-      \item Criterios de aceptación HU4
+      \item \textbf{Criterios de aceptación HU5:}
+        \begin{itemize}
+          \item El sistema debe ser capaz de simular las métricas biomecánicas clave para configuraciones de bicicleta diferentes.
+          \item Los resultados de la simulación deben presentarse en gráficos comparativos que muestren claramente el impacto de cada ajuste en las métricas.
+          \item Cada simulación individual de completarse en un tiempo adecuado.
+        \end{itemize}
+      \item \textbf{Criterios de aceptación HU6:}
+        \begin{itemize}
+          \item El algoritmo debe generar un conjunto de soluciones de Pareto que maximicen la eficiencia y minimicen la incomodidad, respetando las restricciones biomecánicas.
+          \item Las soluciones del Frente de Pareto deben visualizarse en un gráfico que permita al ingeniero entender el balance entre los diferentes objetivos. 
+          \item El algoritmo debe demostrar convergencia hacia un conjunto de soluciones estables y diversas dentro de un número razonable de generaciones/iteraciones.
+        \end{itemize}
+      \item \textbf{Criterios de aceptación HU7:} 
+        \begin{itemize}
+          \item El sistema debe ajustar los rangos de optimización y las ponderaciones de los objetivos basándose en los datos de morfología y nivel del ciclista.
+          \item Las recomendaciones generadas deben mostrar una justificación clara de cómo la morfología y el nivel del ciclista influyeron en los ajustes sugeridos.
+          \item Los modelos internos deben integrar los parámetros morfológicos y de nivel del ciclista como variables de entrada en el proceso de optimización.
+        \end{itemize}
     \end{itemize}
-  \item \textbf{\'{E}pica 3}
+  \item \textbf{Épica 3: Generación de Recomendaciones y Experiencia de Usuario}
     \begin{itemize}
-      \item Criterios de aceptación HU5
-      \item Criterios de aceptación HU6
+      \item \textbf{Criterios de aceptación HU8:} 
+        \begin{itemize}
+          \item El sistema debe generar un reporte descargable que incluya las configuraciones de la bicicleta recomendadas. 
+          \item El reporte debe contener diagramas o imágenes que ilustren visualmente cada ajuste y su ubicación en la bicicleta.
+          \item El reporte debe ser compatible con lectores de PDF estándar y poder ser accedido desde dispositivos móviles y de escritorio.
+        \end{itemize}
+      \item \textbf{Criterios de aceptación HU9:}
+        \begin{itemize}
+          \item La interfaz debe presentar campos de entrada de datos claros y con etiquetas descriptivas para todos los parámetros requeridos.
+          \item La interfaz debe ofrecer validación en tiempo real de los datos ingresados, indicando errores de formato o rangos inválidos de forma intuitiva.
+          \item La interfaz debe ser compatible con los navegadores web modernos.
+        \end{itemize}
     \end{itemize}
-  \item \textbf{\'{E}pica 4}
+  \item \textbf{Épica 4: Validación y Mejora Continua del Sistema}
     \begin{itemize}
-      \item Criterios de aceptación HU7
-      \item Criterios de aceptación HU8
+      \item \textbf{Criterios de aceptación HU10:}
+        \begin{itemize}
+          \item El sistema debe permitir al ciclista iniciar un nuevo ciclo de captura de video y análisis de postura para una re-evaluación. 
+          \item El sistema debe generar un informe comparativo que visualice los cambios en la postura y las métricas de rendimiento entre la evaluación inicial y la re-evaluación.
+          \item Los datos de cada re-evaluación deben almacenarse y vincularse con el historial del ciclista, permitiendo el acceso a versiones anteriores.
+        \end{itemize}
+      \item \textbf{Criterios de aceptación HU11:}
+        \begin{itemize}
+          \item El entorno debe permitir la ejecución de pruebas unitarias, de integración y de extremo a extremo para todas las funcionalidades principales del sistema.
+          \item Los resultados de las pruebas deben visualizarse en un dashboard o reporte que muestre el estado de las pruebas de forma clara. 
+          \item El entorno de pruebas debe ser reproducible y configurable para simular diferentes entornos y conjuntos de datos. 
+        \end{itemize}
     \end{itemize}
-\end{itemize}
-
-\textbf{Reglas para definir criterios de aceptación:}
-\begin{itemize}
-  \item Medibles y verificables.
-  \item Especificar cuándo una historia se considera completada.
-  \item Incluir condiciones específicas.
-  \item No ambiguos.
-  \item Probables de testear funcional o técnicamente.
-  \item Mínimo 3 criterios por HU.
 \end{itemize}
 
 \section{8. Fases de CRISP-DM}
