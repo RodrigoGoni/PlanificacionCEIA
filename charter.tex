@@ -428,14 +428,60 @@ Se estructuran de forma análoga a las \'{e}picas del backlog:
 \end{itemize}
 
 \section{8. Fases de CRISP-DM}
+\label{sec:crisp}
+
+A continuación se detallan las fases del modelo CRISP-DM aplicadas al proyecto.
 
 \begin{enumerate}
-  \item \textbf{Comprensión del negocio:} objetivo, valor agregado de IA, métricas de éxito.
-  \item \textbf{Comprensión de los datos:} tipo, origen, cantidad, calidad.
-  \item \textbf{Preparación de los datos:} características clave, transformaciones necesarias.
-  \item \textbf{Modelado:} tipo de problema, algoritmos posibles.
-  \item \textbf{Evaluación del modelo:} métricas de rendimiento.
-  \item \textbf{Despliegue del modelo (opcional):} tipo de despliegue y herramientas.
+  \item \textbf{Comprensión del negocio:}
+    \begin{itemize}
+      \item \textbf{Objetivo:} El proyecto busca desarrollar un prototipo de sistema inteligente que optimice los parámetros biomecánicos de una bicicleta. El propósito principal es maximizar la potencia y eficiencia del pedaleo, mientras se minimiza el riesgo de lesiones y se equilibra con la aerodinámica para alcanzar la máxima velocidad posible.
+      \item \textbf{Valor agregado de IA:} La inteligencia artificial se utilizará para analizar la postura del ciclista a través de redes neuronales de detección de pose y para ejecutar un algoritmo de optimización multiobjetivo.
+      \item \textbf{Métricas de éxito:}  El éxito del proyecto se medirá por la capacidad del sistema para generar un reporte con recomendaciones claras y cuantificables. Además, la mejora en el rendimiento y la comodidad del ciclista se verificará a través de métricas objetivas y subjetivas post-ajuste, permitiendo un ciclo de re-evaluación para validar el impacto positivo de las sugerencias.
+    \end{itemize}
+
+  \item \textbf{Comprensión de los datos:}
+    \begin{itemize}
+      \item \textbf{Tipo y Origen:} Los datos a utilizar son de diversas fuentes:
+        \begin{itemize}
+          \item Videos del ciclista: Grabaciones desde perspectivas lateral y frontal para el análisis de pose.
+          \item Datos de sensores: Información de rendimiento como potencia (W), cadencia (RPM) ritmo cardíaco (BPM) , y velocidad (km/h), recopilada de forma simultánea a los videos.
+          \item Datos antropométricos: Medidas del ciclista y de la configuración inicial de su bicicleta.
+        \end{itemize}
+      \item \textbf{Cantidad y Calidad:} Se utilizarán recursos propios, incluyendo un rodillo de entrenamiento inteligente que permite realizar pruebas en un entorno controlado. Esta configuración es clave para garantizar la sincronización precisa entre el video y los datos de los sensores. Para enriquecer el dataset, se podrán utilizar datos de plataformas comunitarias como Strava o Zwift.
+    \end{itemize}
+
+  \item \textbf{Preparación de los datos:}
+    \begin{itemize}
+      \item \textbf{Características clave y transformaciones:}
+        \begin{itemize}
+          \item Se aplicarán técnicas de visión por computadora, utilizando una red neuronal de estimación de pose, como Keypoint R-CNN o MediaPipe, para extraer las coordenadas 2D de puntos clave del cuerpo del ciclista a partir de los videos.
+          \item Los datos de sensores y los puntos clave extraídos serán filtrados, sincronizados, limpiados y completados en un módulo de preprocesamiento.
+          \item A partir de las coordenadas, se realizará un análisis cinemático para estudiar ángulos de articulaciones, fluidez del pedaleo y variabilidad del movimiento.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Modelado:}
+    \begin{itemize}
+      \item \textbf{Tipo de problema:} El núcleo del proyecto es un problema de \textbf{optimización multiobjetivo}. Se busca encontrar el balance óptimo entre la aerodinámica y la potencia, ya que la postura más aerodinámica no siempre es la más potente o sostenible.
+      \item \textbf{Algoritmos posibles:} Se planea utilizar un algoritmo genético para explorar el espacio de soluciones y encontrar una configuración óptima de la bicicleta. Este algoritmo trabajará sobre un modelo físico que predice cómo los cambios en los parámetros impactan en el rendimiento. Además, se creará un modelo biomecánico digital para simular el efecto de los ajustes.
+    \end{itemize}
+
+  \item \textbf{Evaluación del modelo:}
+\begin{itemize}
+    \item \textbf{Métricas de rendimiento:} La evaluación no se centrará en métricas de clasificación tradicionales. En su lugar, se evaluará la calidad de las soluciones generadas por el algoritmo de optimización. El algoritmo deberá producir un conjunto de soluciones en el frente de Pareto que representen los mejores compromisos posibles entre los objetivos.
+    \item \textbf{Métricas Cuantificables y Automatizables:}
+    \begin{itemize}
+        \item \textbf{Reducción de la Frecuencia Cardíaca (FC) para una Potencia dada:} A una potencia de salida constante, un menor ritmo cardíaco post-ajuste indicaría una mayor eficiencia cardiovascular y un menor esfuerzo percibido. Esto es directamente medible con los sensores.
+        \item \textbf{Reducción de la Variabilidad de Ángulos Críticos:} Una menor desviación estándar en ángulos articulares clave a lo largo del ciclo de pedaleo puede indicar mayor fluidez, estabilidad y menor riesgo de lesiones. Esto es automatizable a partir del análisis cinemático.
+    \end{itemize}
+    \item \textbf{Métricas Subjetivas (para validación funcional):}
+    \begin{itemize}
+        \item \textbf{Percepción del Esfuerzo (RPE):} El ciclista reporta su nivel de esfuerzo en una escala de 6 a 20 para una sesión de potencia y duración predefinida. Una disminución del RPE sería un indicador de confort y eficiencia.
+        \item \textbf{Escalas de Dolor/Molestia:} Reportes del ciclista sobre la ausencia o reducción de molestias en articulaciones o músculos específicos.
+    \end{itemize}
+    \item \textbf{Proceso de evaluación:} La validación final será funcional. El sistema generará un reporte con recomendaciones claras. El ciclista aplicará los ajustes y realizará una nueva sesión de captura de datos en el entorno controlado. En esta nueva sesión, se compararán las métricas objetivas y se recopilarán las métricas subjetivas con respecto a la configuración inicial. Esto permitirá cerrar un ciclo de mejora continua y validar empíricamente la efectividad de las recomendaciones.
+\end{itemize}
 \end{enumerate}
 
 \section{9. Desglose del trabajo en tareas}
