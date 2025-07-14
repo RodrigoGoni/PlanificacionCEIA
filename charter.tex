@@ -5,7 +5,7 @@
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Optimización Biomecánica del Ciclismo Asistida por Inteligencia Artificial
+\titulo{Optimización biomecánica del ciclismo asistida por inteligencia artificial
 } 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
@@ -29,8 +29,8 @@
 \cliente{Nombre del cliente}
 \empresaCliente{Empresa del cliente}
  
-\fechaINICIO{01 de julio de 2025}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{30 de abril de 2026} 	%Fecha de final de cursada de GdP
+\fechaINICIO{24 de junio de 2025}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{16 de agosto de 2025} 	%Fecha de final de cursada de GdP
 \fechaFINALTrabajo{15 de mayo de 2026}	%Fecha de defensa pública del trabajo final
 
 
@@ -60,8 +60,8 @@
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
-%1      & Se completa hasta el punto 5 inclusive                & {día} de {mes} de 202X \\ \hline
-%2      & Se completa hasta el punto 9 inclusive
+1      & Se completa hasta el punto 5 inclusive                & 07 de julio de 2025 \\ \hline
+2      & Se completa hasta el punto 9 inclusive					 & 15 de julio de 2025 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
 %		  Así                                                    & {día} de {mes} de 202X \\ \hline
@@ -86,7 +86,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en y consistirá en el desarrollo de un prototipo de un sistema inteligente que, mediante la integración de la detección de pose por redes neuronales y el análisis de datos de sensores, optimice los parámetros biomecánicos de la bicicleta para maximizar la potencia, eficiencia y minimizar el riesgo de lesiones del ciclista. El trabajo tendrá un presupuesto preliminar estimado de 600 horas y un costo estimado de \$15000, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en el desarrollo de un prototipo de un sistema inteligente que, mediante la integración de la detección de pose por redes neuronales y el análisis de datos de sensores, optimice los parámetros biomecánicos de la bicicleta para maximizar la potencia, eficiencia y minimizar el riesgo de lesiones del ciclista. El trabajo tendrá un presupuesto preliminar estimado de 600 horas y un costo estimado de \$15000, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -106,15 +106,15 @@ Se adjunta a esta acta la planificación inicial.
 
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
-La biomecánica en el ciclismo es un factor fundamental para mejorar el rendimiento y prevenir lesiones, basándose en el principio de adaptar la bicicleta a las características físicas del ciclista. Un ajuste incorrecto no solo puede causar lesiones, sino también disminuir la potencia de salida hasta en un 20\% [1]. Sin embargo, el acceso a un análisis biomecánico profesional presenta barreras significativas: las soluciones actuales suelen ser costosas, de baja disponibilidad y requieren visitas a laboratorios especializados.
+La biomecánica en el ciclismo es un factor fundamental para mejorar el rendimiento y prevenir lesiones, se basa en el principio de adaptar la bicicleta a las características físicas del ciclista. Un ajuste incorrecto no solo puede causar lesiones, sino también disminuir la potencia de salida hasta en un 20\%. Sin embargo, el acceso a un análisis biomecánico profesional presenta barreras significativas: las soluciones actuales suelen ser costosas, de baja disponibilidad y requieren visitas a laboratorios especializados.
 
 El desafío principal de este proyecto es encontrar el balance óptimo entre la posición que maximiza la velocidad y aquella que minimiza el esfuerzo y el riesgo de lesiones. Frecuentemente, la postura más aerodinámica no es la más sostenible a largo plazo. Para abordar este problema, se propone el desarrollo de un sistema que ajuste automáticamente los parámetros de la bicicleta. Mediante el uso de inteligencia artificial, el sistema analizará la postura del ciclista para optimizar la potencia de salida y reducir la tensión muscular, lo que exige un enfoque de optimización multiobjetivo con diversas restricciones.
 
 Las soluciones convencionales se basan en un análisis estático y puntual, realizado en un único día y dependiente en gran medida de la experiencia del biomecánico. La recomendación de repetir el ajuste anualmente, sumada a su alto costo y escasa disponibilidad, provoca que la mayoría de los ciclistas no mantengan una configuración óptima en sus bicicletas.
 
-El valor fundamental de este sistema radica en ofrecer al ciclista la capacidad de realizar autoajustes frecuentes, de forma autónoma y a un costo significativamente menor que las alternativas tradicionales. Esto democratiza el acceso a una biomecánica de precisión, permitiendo una mejora continua del rendimiento y la prevención de lesiones.
+El valor fundamental de este sistema radica en ofrecer al ciclista la capacidad de realizar autoajustes frecuentes, de forma autónoma y a un costo significativamente menor que las alternativas tradicionales. Esto democratiza el acceso a una biomecánica de precisión, lo que permite una mejora continua del rendimiento y la prevención de lesiones.
 
-Para lograr estos objetivos, el sistema propuesto se estructura en una serie de módulos interconectados, como se ilustra en el diagrama de bloques de la Figura \ref{fig:diagBloques} a continuación:
+Para lograr estos objetivos, el sistema propuesto se estructura en una serie de módulos interconectados, como se ilustra en el diagrama de bloques de la figura \ref{fig:diagBloques} a continuación:
 
 \begin{figure}[htpb]
 \centering
@@ -124,11 +124,11 @@ Para lograr estos objetivos, el sistema propuesto se estructura en una serie de 
 \end{figure}
 
 \begin{itemize}
-\item \textbf{Entrada de datos}: Este módulo es el encargado de recolectar datos de las distintas fuentes de información. Se compone de una fuente de video, sensores de rendimiento y los datos antropomórficos del ciclista.
-\item \textbf{Procesamiento y análisis}: Este módulo toma los datos de entrada y los procesa. Con la ayuda de una red neuronal de detección de pose, añade los datos de posición del ciclista al sistema. Luego, en un módulo de preprocesamiento, los datos se filtran, sincronizan, limpian y completan.
-\item \textbf{Modelado y Simulación}: Con ayuda de un modelo físico y aerodinámico, se predice cómo impactarán los cambios de los parámetros de la bicicleta en el rendimiento.
-\item \textbf{Optimización Multi-Objetivo}: Con un algoritmo genético, se buscará maximizar la performance del objetivo en un rango adecuado de posición, tratando de minimizar la resistencia aerodinámica y teniendo en cuenta la morfología y el nivel del ciclista.
-\item \textbf{Salida y Retroalimentación}: Con los datos de la optimización, se generará un reporte de recomendaciones y posibles configuraciones de la bicicleta. Una vez finalizado el reporte, se recomienda ajustar los parámetros para volver a iniciar el análisis.
+\item Entrada de datos: este módulo es el encargado de recolectar datos de las distintas fuentes de información. Se compone de una fuente de video, sensores de rendimiento y los datos antropomórficos del ciclista.
+\item Procesamiento y análisis: este módulo toma los datos de entrada y los procesa. Con la ayuda de una red neuronal de detección de pose, añade los datos de posición del ciclista al sistema. Luego, en un módulo de preprocesamiento, los datos se filtran, sincronizan, limpian y completan.
+\item Modelado y simulación: con ayuda de un modelo físico y aerodinámico, se predice cómo impactarán los cambios de los parámetros de la bicicleta en el rendimiento.
+\item Optimización multi-objetivo: con un algoritmo genético, se buscará maximizar la performance del objetivo en un rango adecuado de posición, tratando de minimizar la resistencia aerodinámica y teniendo en cuenta la morfología y el nivel del ciclista.
+\item Salida y retroalimentación: con los datos de la optimización, se generará un reporte de recomendaciones y posibles configuraciones de la bicicleta. Una vez finalizado el reporte, se recomienda ajustar los parámetros para volver a iniciar el análisis.
 \end{itemize}
 
 
@@ -146,78 +146,77 @@ Para lograr estos objetivos, el sistema propuesto se estructura en una serie de 
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
 Auspiciante   &        -           &        -      	&       - 	\\ \hline
-Cliente       &    Ciclistas de distintos tipos    &	- &   -     	\\ \hline
+Cliente       &   -    &	- &   -     	\\ \hline
 Impulsor      &       -            &        -      	&      -  	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
 Colaboradores &      -             &        -      	&      -  	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
 Equipo        &  		-         &         -     	&     -   	\\ \hline
 Opositores    &       -            &        -      	&     -   	\\ \hline
-Usuario final &         -          &        -      	&     -   	\\ \hline
+Usuario final &          Ciclistas de distintos tipos         &        -      	&     -   	\\ \hline
 \end{tabularx}
 \end{table}
 
 \begin{itemize}
-\item Cliente: Ciclistas de distintos tipos que buscan optimizar la comodidad o el rendimiento de su bicicleta a través de ajustes personalizados.
 
-\item Responsable:\authorname es el líder del proyecto de optimización biomecánica asistida por IA, originado por una necesidad personal de ajustar su bicicleta. Es ingeniero en Mecatrónica.
+\item Responsable: cl \authorname es el líder del proyecto de optimización biomecánica asistida por IA. Es ingeniero en mecatrónica.
 
-\item Orientador: \supname	, Ingeniero Electricista y Magister en Ciencias de la Ingeniería de la UNRC, es director y profesor adjunto, ya ha dirigido diversas tesis, va a aportar su experiencia en electrónica, telecomunicaciones y software, para definir el alcance y requerimientos del sistema.
+\item Orientador: cl \supname	, ingeniero electricista y magister en ciencias de la ingeniería de la UNRC, es director y profesor adjunto. Ya ha dirigido diversas tesis, aportará su experiencia en electrónica, telecomunicaciones y software, para definir el alcance y requerimientos del sistema.
+\item Usuario final: ciclistas de distintos tipos que buscan optimizar la comodidad o el rendimiento de su bicicleta a través de ajustes personalizados.
 \end{itemize}
+
+
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 El propósito de este proyecto es desarrollar un sistema inteligente y personalizado que, mediante la integración de la detección de pose por redes neuronales y el análisis exhaustivo de datos provenientes de sensores de ciclismo, optimice los parámetros biomecánicos de la bicicleta. Esto incluye la altura y posición del sillín, la longitud de las bielas, la altura y ancho del manillar. El objetivo principal es maximizar la potencia y eficiencia del pedaleo, minimizar el riesgo de lesiones y equilibrar estos factores con la aerodinámica.
-El objetivo fundamental de este sistema radica en ofrecer al ciclista la capacidad de realizar autoajustes frecuentes, de forma autónoma y a un costo significativamente menor que las alternativas tradicionales, democratizando el acceso a una biomecánica de precisión y permitiendo una mejora continua del rendimiento y la prevención de lesiones.
+Este sistema permitirá a los ciclistas realizar autoajustes frecuentes, de forma autónoma y a un costo significativamente menor que las alternativas tradicionales, lo que democratiza el acceso a una biomecánica de precisión y lo que permite una mejora continua del rendimiento y la prevención de lesiones.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-El presente proyecto incluye el desarrollo de un sistema inteligente y personalizado para la optimización biomecánica del ciclismo, asistida por inteligencia artificial.
-
 El proyecto incluye:
 \begin{itemize}
-    \item \textbf{Desarrollo de un sistema de optimización personalizado:} Proporcionará recomendaciones para el ajuste biomecánico de la bicicleta, buscando maximizar el rendimiento, medido por la potencia y velocidad, la eficiencia y prevenir lesiones.
+\item Desarrollo de un sistema de optimización personalizado: proporcionará recomendaciones para el ajuste biomecánico de la bicicleta, buscando maximizar el rendimiento (medido por la potencia y velocidad), la eficiencia y prevenir lesiones.
 
-    \item \textbf{Ciclo continuo de análisis y retroalimentación:} El sistema funcionará a través de las siguientes etapas:
-        \begin{itemize}
-            \item \textbf{Captura de Datos:}
-                \begin{itemize}
-                 	\item Calibración de la cámara.
-                    \item Grabación de videos del ciclista pedaleando.
-                    \item Recopilación simultánea de datos de rendimiento mediante sensores de potencia, cadencia y velocidad.
-                \end{itemize}
-            \item \textbf{Análisis y Modelado:}
-                \begin{itemize}
-                    \item Análisis de Movimiento: Uso de red neuronal de estimación de pose para extraer coordenadas 2D de puntos clave del cuerpo del ciclista desde los videos.
-                    \item Análisis Cinemático: Estudio de ángulos de articulaciones, fluidez del pedaleo y variabilidad del movimiento.
-                    \item Modelo Biomecánico: Creación de un modelo digital del sistema ciclista y bicicleta para simular el impacto de los ajustes en la potencia y el riesgo de lesión.
-                \end{itemize}
-            \item \textbf{Optimización Integral:} Un algoritmo de optimización analizará combinaciones para lograr el equilibrio perfecto entre:
-                \begin{itemize}
-                    \item Ajuste Biomecánico: Determinación de la configuración óptima de componentes.
-                    \item Aerodinámica: Evaluación de la postura del ciclista para la resistencia del aire, buscando la posición más aerodinámica y sostenible.
-                    \item Prevención de Lesiones: Penalización de configuraciones que aumenten el estrés en articulaciones.
-                \end{itemize}
-            \item \textbf{Recomendación y Re-evaluación:} Generación de un reporte con recomendaciones claras para ajustar la bicicleta, permitiendo nuevas sesiones de captura de datos para refinar el ajuste.
-        \end{itemize}
+\item Ciclo continuo de análisis y retroalimentación: el sistema funcionará a través de las siguientes etapas:
+    \begin{itemize}
+        \item Captura de datos:
+            \begin{itemize}
+             	\item Calibración de la cámara.
+                \item Grabación de videos del ciclista pedaleando.
+                \item Recopilación simultánea de datos de rendimiento mediante sensores de potencia, cadencia y velocidad.
+            \end{itemize}
+        \item Análisis y modelado:
+            \begin{itemize}
+                \item Análisis de movimiento: uso de red neuronal de estimación de pose para extraer coordenadas 2D de puntos clave del cuerpo del ciclista desde los videos.
+                \item Análisis cinemático: estudio de ángulos de articulaciones, fluidez del pedaleo y variabilidad del movimiento.
+                \item Modelo biomecánico: creación de un modelo digital del sistema ciclista y bicicleta para simular el impacto de los ajustes en la potencia y el riesgo de lesión.
+            \end{itemize}
+        \item Optimización integral: un algoritmo de optimización analizará combinaciones para lograr el equilibrio perfecto entre:
+            \begin{itemize}
+                \item Ajuste biomecánico: determinación de la configuración óptima de componentes.
+                \item Aerodinámica: evaluación de la postura del ciclista para la resistencia del aire, buscando la posición más aerodinámica y sostenible.
+                \item Prevención de lesiones: penalización de configuraciones que aumenten el estrés en articulaciones.
+            \end{itemize}
+        \item Recomendación y re-evaluación: generación de un reporte con recomendaciones claras para ajustar la bicicleta, permitiendo nuevas sesiones de captura de datos para refinar el ajuste.
+    \end{itemize}
 
-    \item \textbf{Adquisición y uso de datos:}
-        \begin{itemize}
-            \item Videos de ciclismo grabados desde el lateral y el frontal.
-            \item Datos de sensores sincronizados; potencia, cadencia y velocidad.
-            \item Datos antropométricos del ciclista y configuración actual de la bicicleta.
-            \item Utilización de recursos propios y entorno controlado para pruebas sistemáticas y sincronización precisa.
-        \end{itemize}
+\item Adquisición y uso de datos:
+    \begin{itemize}
+        \item Videos de ciclismo grabados desde el lateral y el frontal.
+        \item Datos de sensores sincronizados: potencia, cadencia y velocidad.
+        \item Datos antropométricos del ciclista y configuración actual de la bicicleta.
+        \item Utilización de recursos propios y entorno controlado para pruebas sistemáticas y sincronización precisa.
+    \end{itemize}
 \end{itemize}
 
 El presente proyecto no incluye:
 \begin{itemize}
-    
-    \item El desarrollo de hardware personalizado para la captura de datos, más allá de la integración con sensores comerciales existentes.
-    \item El entrenamiento de la red neuronal de detección de pose desde cero. Se espera utilizar o adaptar redes neuronales preexistentes.
-    \item La integración con todos los posibles modelos de bicicletas y componentes del mercado.
-    \item La simulación de factores externos complejos como condiciones climáticas extremas o interacciones con el tráfico.
+\item El desarrollo de hardware personalizado para la captura de datos, más allá de la integración con sensores comerciales existentes.
+\item El entrenamiento de la red neuronal de detección de pose desde cero. se espera utilizar o adaptar redes neuronales preexistentes.
+\item La integración con todos los posibles modelos de bicicletas y componentes del mercado.
+\item La simulación de factores externos complejos como condiciones climáticas extremas o interacciones con el tráfico.
 \end{itemize}
 
 \section{5. Supuestos del proyecto}
@@ -230,7 +229,7 @@ Para el desarrollo del presente proyecto se supone que:
 \item La red neuronal de detección de pose (como Keypoint R-CNN o MediaPipe) a utilizar será lo suficientemente robusta y precisa para extraer los puntos clave del cuerpo del ciclista necesarios para el análisis biomecánico, y que su rendimiento será adecuado para el procesamiento de video.
 \item Existirá suficiente disponibilidad de datos propios y de la comunidad.
 \item El entorno de desarrollo y las herramientas de software necesarias son adecuadas.
-\item Se contará con el tiempo y los recursos humanos necesarios para la investigación, desarrollo, implementación y realización de pruebas del sistema, incluyendo la mano de obra propia para la ejecución del proyecto.
+\item Se contará con el tiempo y los recursos humanos necesarios para la investigación, desarrollo, implementación y realización de pruebas del sistema, incluida la mano de obra propia para la ejecución del proyecto.
 \item Se contará con la revisión y retroalimentación constante del director del proyecto, \supname	, para asegurar la correcta orientación técnica y académica.
 \item Las condiciones de iluminación durante la captura de video serán adecuadas para permitir una detección de pose precisa.
 \item El proyecto se centrará en optimizaciones biomecánicas para el ciclismo en carretera o interior en rodillo.
