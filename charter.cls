@@ -100,7 +100,11 @@
 \usepackage[section]{placeins} % evita que los floats se pueden ubicar más allá de un \section{•}
 \usepackage[labelsep=period]{caption}
 \usepackage{longtable}
-\usepackage{etoolbox}
+\definecolor{techblue}{RGB}{153,204,254}
+\definecolor{nontechgreen}{RGB}{153,221,153}
+\definecolor{groupgray}{RGB}{220,220,220}
+\definecolor{linkred}{RGB}{165,0,33}
+\usepackage{booktabs}
 
 %\usepackage{tikz}
 %\usetikzlibrary{arrows, arrows.meta, calc, positioning, quotes, shapes}
