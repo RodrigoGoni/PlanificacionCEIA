@@ -544,12 +544,12 @@ A continuación se detallan las tareas correspondientes a los identificadores ut
 
 \begin{longtable}{lp{10cm}l}
 \toprule
-\textbf{ID} & \textbf{Descripción de la tarea} & \textbf{Tipo} \\
+ID & Descripción de la tarea & Tipo \\
 \midrule
 \endhead % Encabezado para todas las páginas de la tabla
 
 % --- Gestión y Documentación ---
-\multicolumn{3}{l}{\textbf{Grupo G: Gestión y documentación}} \\
+\multicolumn{3}{l}{Grupo G: Gestión y documentación} \\
 G.1 & Planificación y acta constitutiva & No técnica \\
 G.2 & Documentación continua & No técnica \\
 G.3 & Redacción de memoria & No técnica \\
@@ -557,7 +557,7 @@ G.4 & Preparación defensa final & No técnica \\
 \midrule
 
 % --- Épica 1 ---
-\multicolumn{3}{l}{\textbf{Grupo E1: Adquisición y preprocesamiento de datos}} \\
+\multicolumn{3}{l}{Grupo E1: Adquisición y preprocesamiento de datos} \\
 E1.1 & HU1: Investigar librerías de control de cámara & Técnica \\
 E1.2 & HU1: Implementar script de grabación de video & Técnica \\
 E1.3 & HU2: Investigar métodos de sincronización de sensores & Técnica \\
@@ -570,7 +570,7 @@ E1.9 & HU4: Implementar filtros para suavizado y reducción de ruido & Técnica 
 \midrule
 
 % --- Épica 2 ---
-\multicolumn{3}{l}{\textbf{Grupo E2: Modelado y optimización biomecánica}} \\
+\multicolumn{3}{l}{Grupo E2: Modelado y optimización biomecánica} \\
 E2.1 & HU5: Desarrollar modelo físico-matemático del ciclista & Técnica \\
 E2.2 & HU5: Implementar simulación de ajustes posturales & Técnica \\
 E2.3 & HU5: Crear visualizaciones del modelo y sus cambios & Técnica \\
@@ -581,7 +581,7 @@ E2.7 & HU7: Integrar personalización del modelo (datos antropométricos) & Téc
 \midrule
 
 % --- Épica 3 ---
-\multicolumn{3}{l}{\textbf{Grupo E3: Generación de recomendaciones y UX}} \\
+\multicolumn{3}{l}{Grupo E3: Generación de recomendaciones y UX} \\
 E3.1 & HU9: Desarrollar interfaz de usuario (UI) simple para entrada de datos & Técnica \\
 E3.2 & HU9: Implementar validaciones de los datos de entrada & Técnica \\
 E3.3 & HU8: Diseñar estructura y plantilla del reporte PDF & Técnica \\
@@ -589,7 +589,7 @@ E3.4 & HU8: Script de generación automática de reporte de resultados & Técnic
 \midrule
 
 % --- Épica 4 ---
-\multicolumn{3}{l}{\textbf{Grupo E4: Validación y mejora continua}} \\
+\multicolumn{3}{l}{Grupo E4: Validación y mejora continua} \\
 E4.1 & HU11: Estructurar el código para pruebas unitarias y de integración & Técnica \\
 E4.2 & HU11: Crear dataset de prueba con casos conocidos & Técnica \\
 E4.3 & HU11: Escribir pruebas de integración para el flujo completo & Técnica \\
@@ -722,7 +722,7 @@ E4.5 & HU10: Generar reporte comparativo entre diferentes sesiones & Técnica \\
 % --- ENCABEZADO PARA LA PRIMERA PÁGINA ---
 \hline
 \rowcolor[HTML]{C0C0C0}
-\textbf{Sprint} & \textbf{HU o Fase} & \textbf{Tarea técnica o de gestión} & \textbf{Horas} & \textbf{Responsable} & \textbf{\% comp.} \\
+Sprint & HU o Fase & Tarea técnica o de gestión & Horas & Responsable & \% comp. \\
 \hline
 \endfirsthead
 
@@ -730,7 +730,7 @@ E4.5 & HU10: Generar reporte comparativo entre diferentes sesiones & Técnica \\
 \multicolumn{6}{l}{\tablename\ \thetable{} -- continuación de la página anterior} \\
 \hline
 \rowcolor[HTML]{C0C0C0}
-\textbf{sprint} & \textbf{hu o fase} & \textbf{tarea técnica o de gestión} & \textbf{horas} & \textbf{responsable} & \textbf{\% comp.} \\
+Sprint & HU o Fase & Tarea técnica o de gestión & Horas & Responsable & \% comp. \\
 \hline
 \endhead
 
@@ -741,7 +741,7 @@ E4.5 & HU10: Generar reporte comparativo entre diferentes sesiones & Técnica \\
 
 % --- PIE DE PÁGINA PARA LA ÚLTIMA PÁGINA ---
 \hline
-\multicolumn{3}{|r|}{\textbf{total de horas estimadas}} & \textbf{600 h} & & \\
+\multicolumn{3}{|r|}{Total de horas estimadas} & 600 h & & \\
 \hline
 \endlastfoot
 
@@ -800,32 +800,20 @@ Sprint 11 & Defensa & Preparación de la presentación y material de defensa. & 
 
 \section{12. Normativa y cumplimiento de datos (gobernanza)}
 
-El proyecto gestiona datos personales y sensibles, por lo que su tratamiento exige el cumplimiento estricto de la normativa de protección de datos vigente.
-
-\subsection{Tipología de los datos}
-Los datos que se recolectan se clasifican de la siguiente manera:
+El proyecto gestiona datos personales y sensibles, por lo que su tratamiento exige el cumplimiento estricto de la normativa vigente. Los datos que se recolectan incluyen:
 \begin{itemize}
-    \item \textbf{Datos personales:} videos con la imagen del ciclista, sus medidas antropométricas y las métricas de rendimiento (potencia, cadencia) que se asocian a él.
-    \item \textbf{Datos sensibles:} la frecuencia cardíaca (FC), por ser un dato relativo a la salud. Su tratamiento requiere un nivel superior de protección.
+    \item Datos personales: videos con la imagen del ciclista, sus medidas antropométricas y las métricas de rendimiento (potencia, cadencia) que se asocian a él.
+    \item Datos sensibles: la frecuencia cardíaca (FC), por ser un dato relativo a la salud y requerir un nivel superior de protección.
 \end{itemize}
 
-\subsection{Marco regulatorio}
-El marco legal aplicable al proyecto es:
+El marco legal principal es la ley 25.326 de Protección de Datos Personales de la República Argentina, y se adoptan como referencia los principios del Reglamento General de Protección de Datos (RGPD) europeo. Para garantizar la legalidad y la ética del proyecto, se establecen los siguientes requisitos obligatorios:
 \begin{itemize}
-    \item \textbf{Normativa principal:} la ley 25.326 de Protección de Datos Personales de la República Argentina y sus normativas complementarias.
-    \item \textbf{Estándar de referencia:} se adoptan como buena práctica los principios del Reglamento General de Protección de Datos (RGPD) de la Unión Europea, en especial la privacidad desde el diseño.
+    \item Consentimiento explícito: se debe obtener el consentimiento informado de cada ciclista antes de la recolección de datos, con un detalle claro de la finalidad del tratamiento y los derechos del titular.
+    \item Limitación de la finalidad: el uso de los datos se restringe exclusivamente al objetivo del proyecto, que es la optimización biomecánica.
+    \item Seguridad y confidencialidad: es imperativa la implementación de medidas técnicas para la protección de los datos. Se prioriza la anonimización en las etapas tempranas del proceso para mitigar riesgos.
 \end{itemize}
 
-\subsection{Requisitos de cumplimiento}
-Para asegurar la legalidad y la ética del proyecto, se establecen los siguientes requisitos obligatorios:
-\begin{itemize}
-    \item \textbf{Consentimiento explícito:} se debe obtener el consentimiento informado y expreso de cada ciclista antes de la recolección de datos. El documento de consentimiento debe detallar con claridad la finalidad del tratamiento, el tipo de datos que se usan y los derechos del titular.
-    \item \textbf{Limitación de la finalidad:} el uso de los datos se restringe exclusivamente al objetivo del proyecto: la optimización biomecánica del ciclista.
-    \item \textbf{Seguridad y confidencialidad:} es imperativa la implementación de medidas técnicas y organizativas para garantizar la seguridad de los datos. Se prioriza la \textbf{anonimización} de los datos en las etapas tempranas del proceso para mitigar riesgos.
-\end{itemize}
-
-\subsection{Viabilidad}
-El proyecto es viable desde el punto de vista legal y ético. Su ejecución se condiciona a la correcta y continua aplicación del marco de gobernanza de datos aquí descrito. Al centrarse en el uso de recursos propios en un entorno controlado, el proyecto tiene una gran ventaja para implementar correctamente estos controles.
+En conclusión, el proyecto es viable desde el punto de vista legal y ético. Su ejecución se condiciona a la correcta y continua aplicación del marco de gobernanza de datos aquí descrito. Al centrarse en el uso de recursos propios en un entorno controlado, el proyecto tiene una gran ventaja para implementar correctamente estos controles.
 
 
 \section{13. Gestión de riesgos}
