@@ -62,6 +62,7 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
 1      & Se completa hasta el punto 5 inclusive                & 07 de julio de 2025 \\ \hline
 2      & Se completa hasta el punto 9 inclusive					 & 15 de julio de 2025 \\ \hline
+3      & Se completa hasta el punto 12 inclusive					 & 29 de julio de 2025 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
 %		  Así                                                    & {día} de {mes} de 202X \\ \hline
@@ -106,7 +107,7 @@ Se adjunta a esta acta la planificación inicial.
 
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
-La biomecánica en el ciclismo es un factor fundamental para mejorar el rendimiento y prevenir lesiones, se basa en el principio de adaptar la bicicleta a las características físicas del ciclista. Un ajuste incorrecto no solo puede causar lesiones, sino también disminuir la potencia de salida hasta en un 20\%. Sin embargo, el acceso a un análisis biomecánico profesional presenta barreras significativas: las soluciones actuales suelen ser costosas, de baja disponibilidad y requieren visitas a laboratorios especializados.
+La biomecánica en el ciclismo es un factor fundamental para mejorar el rendimiento y prevenir lesiones. Se basa en el principio de adaptar la bicicleta a las características físicas del ciclista. Un ajuste incorrecto no solo puede causar lesiones, sino también disminuir la potencia de salida hasta en un 20\%. Sin embargo, el acceso a un análisis biomecánico profesional presenta barreras significativas: las soluciones actuales suelen ser costosas, de baja disponibilidad y requieren visitas a laboratorios especializados.
 
 El desafío principal de este proyecto es encontrar el balance óptimo entre la posición que maximiza la velocidad y aquella que minimiza el esfuerzo y el riesgo de lesiones. Frecuentemente, la postura más aerodinámica no es la más sostenible a largo plazo. Para abordar este problema, se propone el desarrollo de un sistema que ajuste automáticamente los parámetros de la bicicleta. Mediante el uso de inteligencia artificial, el sistema analizará la postura del ciclista para optimizar la potencia de salida y reducir la tensión muscular, lo que exige un enfoque de optimización multiobjetivo con diversas restricciones.
 
@@ -145,21 +146,15 @@ Para lograr estos objetivos, el sistema propuesto se estructura en una serie de 
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &        -           &        -      	&       - 	\\ \hline
-Cliente       &   -    &	- &   -     	\\ \hline
-Impulsor      &       -            &        -      	&      -  	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &      -             &        -      	&      -  	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
-Equipo        &  		-         &         -     	&     -   	\\ \hline
-Opositores    &       -            &        -      	&     -   	\\ \hline
 Usuario final &          Ciclistas de distintos tipos         &        -      	&     -   	\\ \hline
 \end{tabularx}
 \end{table}
 
 \begin{itemize}
 
-\item Responsable: cl \authorname es el líder del proyecto de optimización biomecánica asistida por IA. Es ingeniero en mecatrónica.
+\item Responsable: cl \authorname  es el líder del proyecto de optimización biomecánica asistida por IA. Es ingeniero en mecatrónica.
 
 \item Orientador: cl \supname	, ingeniero electricista y magister en ciencias de la ingeniería de la UNRC, es director y profesor adjunto. Ya ha dirigido diversas tesis, aportará su experiencia en electrónica, telecomunicaciones y software, para definir el alcance y requerimientos del sistema.
 \item Usuario final: ciclistas de distintos tipos que buscan optimizar la comodidad o el rendimiento de su bicicleta a través de ajustes personalizados.
@@ -170,7 +165,7 @@ Usuario final &          Ciclistas de distintos tipos         &        -      	&
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 El propósito de este proyecto es desarrollar un sistema inteligente y personalizado que, mediante la integración de la detección de pose por redes neuronales y el análisis exhaustivo de datos provenientes de sensores de ciclismo, optimice los parámetros biomecánicos de la bicicleta. Esto incluye la altura y posición del sillín, la longitud de las bielas, la altura y ancho del manillar. El objetivo principal es maximizar la potencia y eficiencia del pedaleo, minimizar el riesgo de lesiones y equilibrar estos factores con la aerodinámica.
-Este sistema permitirá a los ciclistas realizar autoajustes frecuentes, de forma autónoma y a un costo significativamente menor que las alternativas tradicionales, lo que democratiza el acceso a una biomecánica de precisión y lo que permite una mejora continua del rendimiento y la prevención de lesiones.
+Este sistema permitirá a los ciclistas realizar autoajustes frecuentes, de forma autónoma y a un costo significativamente menor que las alternativas tradicionales, lo que democratiza el acceso a una biomecánica de precisión y permite una mejora continua del rendimiento y la prevención de lesiones.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
@@ -199,7 +194,7 @@ El proyecto incluye:
                 \item Aerodinámica: evaluación de la postura del ciclista para la resistencia del aire, que buscará la posición más aerodinámica y sostenible.
                 \item Prevención de lesiones: penalización de configuraciones que aumenten el estrés en articulaciones.
             \end{itemize}
-        \item Recomendación y re-evaluación: generación de un reporte con recomendaciones claras para ajustar la bicicleta, lo que permita nuevas sesiones de captura de datos para refinar el ajuste.
+        \item Recomendación y re-evaluación: generación de un reporte con recomendaciones claras para ajustar la bicicleta, que permita nuevas sesiones de captura de datos para refinar el ajuste.
     \end{itemize}
 
 \item Adquisición y uso de datos:
@@ -240,7 +235,7 @@ Para el desarrollo del presente proyecto se supone que:
 \label{sec:backlog}
 
 \begin{itemize}
-  \item Épica 1: adquisición y preprocesamiento de datos biomecánicos
+  \item Épica 1: adquisición y preprocesamiento de datos biomecánicos.
     \begin{itemize}
       \item HU1: como ciclista, quiero que el sistema tome mi imagen de pedaleo para analizar mi postura.
         \begin{itemize}
@@ -271,7 +266,7 @@ Para el desarrollo del presente proyecto se supone que:
           \item Suma: 8 $\rightarrow$ Story points: 8
         \end{itemize}
     \end{itemize}
-  \item Épica 2: modelado y optimización biomecánica
+  \item Épica 2: modelado y optimización biomecánica.
     \begin{itemize}
       \item HU5: como ingeniero de software, quiero que el sistema simule las condiciones de pedaleo y el impacto de los ajustes mecánicos para predecir los resultados de la optimización.
         \begin{itemize}
@@ -287,7 +282,7 @@ Para el desarrollo del presente proyecto se supone que:
           \item Incertidumbre: 5
           \item Suma: 15 $\rightarrow$ Story points: 21
         \end{itemize}
-      \item HU7: como sistema de optimización, necesito considerar la morfología y el nivel del ciclista para ofrecer recomendaciones personalizadas y efectivas.
+      \item HU7: Como ingeniero, necesito un sistema de optimización que considere la morfología y el nivel del ciclista para ofrecer recomendaciones personalizadas y efectivas.
         \begin{itemize}
           \item Dificultad: 4
           \item Complejidad: 3
@@ -295,7 +290,7 @@ Para el desarrollo del presente proyecto se supone que:
           \item Suma: 10 $\rightarrow$ Story points: 13
         \end{itemize}
     \end{itemize}
-  \item Épica 3: generación de recomendaciones y experiencia de usuario
+  \item Épica 3: generación de recomendaciones y experiencia de usuario.
     \begin{itemize}
       \item HU8: como ciclista, quiero recibir un reporte claro y conciso con las recomendaciones de configuración de mi bicicleta para poder realizar los ajustes yo mismo.
         \begin{itemize}
@@ -312,7 +307,7 @@ Para el desarrollo del presente proyecto se supone que:
           \item Suma: 7 $\rightarrow$ Story points: 8
         \end{itemize}
     \end{itemize}
-  \item Épica 4: validación y mejora continua del sistema
+  \item Épica 4: validación y mejora continua del sistema.
     \begin{itemize}
       \item HU10: como ciclista, quiero poder re-evaluar mi postura y rendimiento después de aplicar los ajustes recomendados para refinar la optimización.
         \begin{itemize}
@@ -336,7 +331,7 @@ Para el desarrollo del presente proyecto se supone que:
 \label{sec:criteriosAceptacion}
 
 \begin{itemize}
-  \item Épica 1: adquisición y preprocesamiento de datos biomecánicos
+  \item Épica 1: adquisición y preprocesamiento de datos biomecánicos.
     \begin{itemize}
       \item Criterios de aceptación HU1:
         \begin{itemize}
@@ -363,7 +358,7 @@ Para el desarrollo del presente proyecto se supone que:
           \item La aplicación de filtros debe reducir el ruido en los datos al menos en un 20\% sin perder información relevante, según métricas preestablecidas.
         \end{itemize}
     \end{itemize}
-  \item Épica 2: modelado y optimización biomecánica
+  \item Épica 2: modelado y optimización biomecánica.
     \begin{itemize}
       \item Criterios de aceptación HU5:
         \begin{itemize}
@@ -384,7 +379,7 @@ Para el desarrollo del presente proyecto se supone que:
           \item Los modelos internos deben integrar los parámetros morfológicos y de nivel del ciclista como variables de entrada en el proceso de optimización.
         \end{itemize}
     \end{itemize}
-  \item Épica 3: generación de recomendaciones y experiencia de usuario
+  \item Épica 3: generación de recomendaciones y experiencia de usuario.
     \begin{itemize}
       \item Criterios de aceptación HU8:
         \begin{itemize}
@@ -399,7 +394,7 @@ Para el desarrollo del presente proyecto se supone que:
           \item La interfaz debe ser compatible con los navegadores web modernos.
         \end{itemize}
     \end{itemize}
-  \item Épica 4: validación y mejora continua del sistema
+  \item Épica 4: validación y mejora continua del sistema.
     \begin{itemize}
       \item Criterios de aceptación HU10:
         \begin{itemize}
@@ -431,7 +426,7 @@ A continuación se detallan las fases del modelo CRISP-DM aplicadas al proyecto.
 
   \item Comprensión de los datos:
     \begin{itemize}
-      \item Tipo y origen: los datos a utilizar son de diversas fuentes:
+      \item Tipo y origen:
         \begin{itemize}
           \item Videos del ciclista: grabaciones desde perspectivas lateral y frontal para el análisis de pose.
           \item Datos de sensores: información de rendimiento como potencia (W), cadencia (RPM) ritmo cardíaco (BPM), y velocidad (km/h), recopilada de forma simultánea a los videos.
