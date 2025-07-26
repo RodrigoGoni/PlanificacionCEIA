@@ -800,18 +800,32 @@ Sprint 11 & Defensa & Preparación de la presentación y material de defensa. & 
 
 \section{12. Normativa y cumplimiento de datos (gobernanza)}
 
-En esta sección se debe analizar si los datos utilizados en el proyecto están sujetos a normativas de protección de datos y privacidad, y en qué condiciones se pueden emplear.
+El proyecto gestiona datos personales y sensibles, por lo que su tratamiento exige el cumplimiento estricto de la normativa de protección de datos vigente.
 
-\textbf{Aspectos a considerar:}
+\subsection{Tipología de los datos}
+Los datos que se recolectan se clasifican de la siguiente manera:
 \begin{itemize}
-  \item Evaluar si los datos están regulados por normativas como GDPR, Ley 25.326 de Protección de Datos Personales en Argentina, HIPAA u otras según jurisdicción y temática.
-  \item Determinar si el uso de los datos requiere consentimiento explícito de los usuarios involucrados.
-  \item Indicar si existen restricciones legales, técnicas o contractuales sobre el uso, compartición o publicación de los datos.
-  \item Aclarar si los datos provienen de fuentes licenciadas, de acceso público o bajo algún tipo de autorización especial.
-  \item Analizar la viabilidad del proyecto desde el punto de vista legal y ético, considerando la gobernanza de los datos.
+    \item \textbf{Datos personales:} videos con la imagen del ciclista, sus medidas antropométricas y las métricas de rendimiento (potencia, cadencia) que se asocian a él.
+    \item \textbf{Datos sensibles:} la frecuencia cardíaca (FC), por ser un dato relativo a la salud. Su tratamiento requiere un nivel superior de protección.
 \end{itemize}
 
-Este análisis es clave para garantizar el cumplimiento normativo y evitar conflictos legales durante el desarrollo y publicación del proyecto.
+\subsection{Marco regulatorio}
+El marco legal aplicable al proyecto es:
+\begin{itemize}
+    \item \textbf{Normativa principal:} la ley 25.326 de Protección de Datos Personales de la República Argentina y sus normativas complementarias.
+    \item \textbf{Estándar de referencia:} se adoptan como buena práctica los principios del Reglamento General de Protección de Datos (RGPD) de la Unión Europea, en especial la privacidad desde el diseño.
+\end{itemize}
+
+\subsection{Requisitos de cumplimiento}
+Para asegurar la legalidad y la ética del proyecto, se establecen los siguientes requisitos obligatorios:
+\begin{itemize}
+    \item \textbf{Consentimiento explícito:} se debe obtener el consentimiento informado y expreso de cada ciclista antes de la recolección de datos. El documento de consentimiento debe detallar con claridad la finalidad del tratamiento, el tipo de datos que se usan y los derechos del titular.
+    \item \textbf{Limitación de la finalidad:} el uso de los datos se restringe exclusivamente al objetivo del proyecto: la optimización biomecánica del ciclista.
+    \item \textbf{Seguridad y confidencialidad:} es imperativa la implementación de medidas técnicas y organizativas para garantizar la seguridad de los datos. Se prioriza la \textbf{anonimización} de los datos en las etapas tempranas del proceso para mitigar riesgos.
+\end{itemize}
+
+\subsection{Viabilidad}
+El proyecto es viable desde el punto de vista legal y ético. Su ejecución se condiciona a la correcta y continua aplicación del marco de gobernanza de datos aquí descrito. Al centrarse en el uso de recursos propios en un entorno controlado, el proyecto tiene una gran ventaja para implementar correctamente estos controles.
 
 
 \section{13. Gestión de riesgos}
