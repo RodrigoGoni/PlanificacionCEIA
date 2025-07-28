@@ -532,182 +532,7 @@ HU11 & Escribir pruebas de integración que verifiquen la correcta comunicación
 
 \end{longtable}
 
-\section{10. Diagrama de Gantt}
-\label{sec:gantt}
-
-A continuación se detallan las tareas correspondientes a los identificadores utilizados en el diagrama de Gantt (sección \ref{sec:gantt}).
-
-\begin{longtable}{lp{10cm}l}
-\toprule
-ID & Descripción de la tarea & Tipo \\
-\midrule
-\endhead % Encabezado para todas las páginas de la tabla
-
-% --- Gestión y Documentación ---
-\multicolumn{3}{l}{Grupo G: Gestión y documentación} \\
-G.1 & Planificación y acta constitutiva & No técnica \\
-G.2 & Documentación continua & No técnica \\
-G.3 & Redacción de memoria & No técnica \\
-G.4 & Preparación defensa final & No técnica \\
-\midrule
-
-% --- Épica 1 ---
-\multicolumn{3}{l}{Grupo E1: Adquisición y preprocesamiento de datos} \\
-E1.1 & HU1: Investigar librerías de control de cámara & Técnica \\
-E1.2 & HU1: Implementar script de grabación de video & Técnica \\
-E1.3 & HU2: Investigar métodos de sincronización de sensores & Técnica \\
-E1.4 & HU2: Script para automatización de la captura de datos & Técnica \\
-E1.5 & HU3: Investigar modelos de estimación de pose & Técnica \\
-E1.6 & HU3: Implementar extracción de keypoints de pose & Técnica \\
-E1.7 & HU3: Visualizar esqueleto de puntos clave & Técnica \\
-E1.8 & HU4: Scripts de carga de datos y análisis exploratorio (EDA) & Técnica \\
-E1.9 & HU4: Implementar filtros para suavizado y reducción de ruido & Técnica \\
-\midrule
-
-% --- Épica 2 ---
-\multicolumn{3}{l}{Grupo E2: Modelado y optimización biomecánica} \\
-E2.1 & HU5: Desarrollar modelo físico-matemático del ciclista & Técnica \\
-E2.2 & HU5: Implementar simulación de ajustes posturales & Técnica \\
-E2.3 & HU5: Crear visualizaciones del modelo y sus cambios & Técnica \\
-E2.4 & HU6: Investigar librerías de optimización genética & Técnica \\
-E2.5 & HU6: Definir función de fitness para optimización & Técnica \\
-E2.6 & HU6: Implementar algoritmo genético para la optimización & Técnica \\
-E2.7 & HU7: Integrar personalización del modelo (datos antropométricos) & Técnica \\
-\midrule
-
-% --- Épica 3 ---
-\multicolumn{3}{l}{Grupo E3: Generación de recomendaciones y UX} \\
-E3.1 & HU9: Desarrollar interfaz de usuario (UI) simple para entrada de datos & Técnica \\
-E3.2 & HU9: Implementar validaciones de los datos de entrada & Técnica \\
-E3.3 & HU8: Diseñar estructura y plantilla del reporte PDF & Técnica \\
-E3.4 & HU8: Script de generación automática de reporte de resultados & Técnica \\
-\midrule
-
-% --- Épica 4 ---
-\multicolumn{3}{l}{Grupo E4: Validación y mejora continua} \\
-E4.1 & HU11: Estructurar el código para pruebas unitarias y de integración & Técnica \\
-E4.2 & HU11: Crear dataset de prueba con casos conocidos & Técnica \\
-E4.3 & HU11: Escribir pruebas de integración para el flujo completo & Técnica \\
-E4.4 & HU10: Implementar guardado y carga de sesiones de análisis & Técnica \\
-E4.5 & HU10: Generar reporte comparativo entre diferentes sesiones & Técnica \\
-
-\bottomrule
-\caption{Tabla de referencias para las tareas del diagrama de Gantt.}
-\label{tab:gantt_ref}
-\end{longtable}
-
-
-
-\begin{ganttchart}[
-    hgrid,
-    vgrid,
-    x unit=0.64cm, 
-    y unit title=0.64cm,
-    y unit chart=0.59cm,
-    bar/.append style={fill=blue!50!cyan},
-    group/.append style={fill=gray!50},
-    link/.style={-latex, color=red!80!black},
-    bar label node/.append style={align=left},
-    group label node/.append style={align=left},
-    bar label node/.append style={font=\scriptsize}, 
-    group label node/.append style={font=\scriptsize},
-    bar height=0.2,
-    group height=0.2,
-    % Definición de colores sugerida por el usuario
-    /pgf/gantt/bar/.append style={fill=techblue},
-    /pgf/gantt/group/.append style={fill=groupgray},
-    /pgf/gantt/link/.style={-latex, color=linkred}
-  ]{1}{25}
-
-\gantttitle{Cronograma del proyecto (semanas)}{25} \\
-\gantttitlelist{1,...,25}{1}
-
-% --- GRUPO G: Gestión (No Técnico) ---
-\ganttgroup{G}{1}{24} \\
-\ganttbar[bar/.append style={fill=nontechgreen}, name=plan]{G.1}{1}{1} \\
-\ganttbar[bar/.append style={fill=nontechgreen}, name=docu]{G.2}{2}{23} \\
-\ganttbar[bar/.append style={fill=nontechgreen}, name=memoria]{G.3}{20}{23} \\
-\ganttbar[bar/.append style={fill=nontechgreen}, name=defensa]{G.4}{24}{24} \\ % Ajustado a 1 semana
-\ganttmilestone[name=m1]{28/11/25}{1} \\
-
-% --- GRUPO E1: Épica 1 (Técnico) ---
-\ganttgroup{E1}{2}{9} \\
-\ganttbar[name=t1_1]{E1.1}{2}{2} \\
-\ganttbar[name=t1_2]{E1.2}{3}{4} \\
-\ganttbar[name=t1_3]{E1.3}{3}{4} \\
-\ganttbar[name=t1_4]{E1.4}{5}{6} \\
-\ganttbar[name=t1_5]{E1.5}{4}{5} \\
-\ganttbar[name=t1_6]{E1.6}{6}{7} \\
-\ganttbar[name=t1_7]{E1.7}{8}{8} \\
-\ganttbar[name=t1_8]{E1.8}{7}{8} \\
-\ganttbar[name=t1_9]{E1.9}{9}{9} \\
-\ganttmilestone[name=m2]{Prep. final.}{9} \\
-
-% --- GRUPO E2: Épica 2 (Técnico) ---
-\ganttgroup{E2}{10}{18} \\
-\ganttbar[name=t2_1]{E2.1}{10}{11} \\
-\ganttbar[name=t2_2]{E2.2}{12}{13} \\
-\ganttbar[name=t2_3]{E2.3}{14}{14} \\
-\ganttbar[name=t2_4]{E2.4}{10}{10} \\
-\ganttbar[name=t2_5]{E2.5}{11}{12} \\
-\ganttbar[name=t2_6]{E2.6}{13}{15} \\
-\ganttbar[name=t2_7]{E2.7}{16}{18} \\
-\ganttmilestone[name=m3]{Mod. fin.}{18} \\
-
-% --- GRUPO E3: Épica 3 (Técnico) ---
-% CAMBIO: Adelantado para iniciar en paralelo con E1/E2
-\ganttgroup{E3}{9}{21} \\ 
-\ganttbar[name=t3_1]{E3.1}{9}{11} \\ % CAMBIO: Inicia mucho antes
-\ganttbar[name=t3_2]{E3.2}{12}{12} \\
-\ganttbar[name=t3_3]{E3.3}{17}{17} \\
-\ganttbar[name=t3_4]{E3.4}{19}{21} \\ % CAMBIO: Inicia después del hito del modelo
-
-% --- GRUPO E4: Épica 4 (Técnico) ---
-% CAMBIO: Adelantado para iniciar antes
-\ganttgroup{E4}{4}{23} \\
-\ganttbar[name=t4_1]{E4.1}{4}{6} \\   % CAMBIO: Inicia mucho antes
-\ganttbar[name=t4_2]{E4.2}{16}{17} \\
-\ganttbar[name=t4_3]{E4.3}{18}{20} \\
-\ganttbar[name=t4_4]{E4.4}{19}{20} \\ % CAMBIO: Inicia después del hito del modelo
-\ganttbar[name=t4_5]{E4.5}{21}{22} \\
-\ganttmilestone[
-  milestone/.append style={fill=red!80!black},
-  milestone label node/.append style={color=red!80!black}
-]{15/05/26}{25} \\
-
-% --- Enlaces de Dependencia (Ajustados) ---
-\ganttlink{t1_1}{t1_2}
-\ganttlink{t1_1}{t1_3}
-\ganttlink{t1_2}{t1_4}
-\ganttlink{t1_5}{t1_6}
-\ganttlink{t1_6}{t1_7}
-\ganttlink{t1_6}{t1_8}
-\ganttlink{t1_8}{t1_9}
-
-% Dependencias de hitos
-\ganttlink{m2}{t2_1}
-\ganttlink{m2}{t2_4}
-\ganttlink{m2}{t3_1} % La UI puede empezar con los datos listos
-\ganttlink{m3}{t3_4} % El reporte final necesita el modelo
-\ganttlink{m3}{t4_3} % Las pruebas de integración necesitan el modelo
-\ganttlink{m3}{t4_4} % Guardar sesión necesita el modelo
-\ganttlink{m3}{memoria}
-
-% Dependencias internas de cada grupo
-\ganttlink{t2_1}{t2_2}
-\ganttlink{t2_2}{t2_3}
-\ganttlink{t2_4}{t2_5}
-\ganttlink{t2_5}{t2_6}
-\ganttlink{t2_6}{t2_7}
-\ganttlink{t3_1}{t3_2}
-\ganttlink{t3_3}{t3_4}
-\ganttlink{plan}{t4_1} % La estructura de pruebas debe seguir a la planificación
-\ganttlink{t4_1}{t4_2}
-\ganttlink{t4_4}{t4_5}
-\ganttlink{t4_5}{defensa}
-\end{ganttchart}
-
-\section{11. Planificación de Sprints}
+\section{10. Planificación de Sprints}
 
 \begin{longtable}{|l|l|p{0.4\linewidth}|c|l|c|}
 
@@ -792,6 +617,180 @@ Sprint 11 & Memoria & Redacción final y revisión completa de la memoria. & 25 
 Sprint 11 & Defensa & Preparación de la presentación y material de defensa. & 25 h & Alumno & 0\% \\
 
 \end{longtable}
+
+\section{11. Diagrama de Gantt y referencias}
+\label{sec:gantt_sprints}
+
+Para mejorar la legibilidad del diagrama de Gantt, se utilizan identificadores abreviados para cada tarea. La siguiente tabla detalla la correspondencia entre cada ID y su descripción completa.
+
+\begin{longtable}{|l|p{0.8\linewidth}|}
+\caption{Tabla de referencias para las tareas del diagrama de Gantt.}
+\label{tab:gantt_ref_sprints} \\
+\hline
+\rowcolor{gray}
+\textbf{ID} & \textbf{Descripción de la tarea} \\
+\hline
+\endfirsthead
+\multicolumn{2}{l}{\tablename\ \thetable{} -- continuación de la página anterior} \\
+\hline
+\rowcolor{gray}
+\textbf{ID} & \textbf{Descripción de la tarea} \\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+
+% --- Sprint 0 ---
+\multicolumn{2}{l}{\textbf{Sprint 0: planificación}} \\
+S0.1 & Definición del alcance, cronograma y acta constitutiva \\
+S0.2 & Configuración del entorno de desarrollo y repositorios \\ \hline
+% --- Sprint 1 ---
+\multicolumn{2}{l}{\textbf{Sprint 1: adquisición de datos (HU1, HU2)}} \\
+S1.1 & Investigación y selección de librería para control de cámara \\
+S1.2 & Desarrollo del script de grabación y sincronización de sensores \\
+S1.3 & Documentación continua del sprint \\ \hline
+% --- Sprint 2 ---
+\multicolumn{2}{l}{\textbf{Sprint 2: preprocesamiento (HU2, HU3)}} \\
+S2.1 & Desarrollo del script para automatizar la captura de datos \\
+S2.2 & Investigación y comparación de modelos de estimación de pose \\
+S2.3 & Implementación de la extracción de puntos clave de videos \\
+S2.4 & Documentación continua del sprint \\ \hline
+% --- Sprint 3 ---
+\multicolumn{2}{l}{\textbf{Sprint 3: análisis y visualización (HU3, HU4)}} \\
+S3.1 & Desarrollo de función para visualización del esqueleto \\
+S3.2 & Desarrollo de scripts para carga y análisis exploratorio (EDA) \\
+S3.3 & Implementación de filtros para suavizado y limpieza de datos \\
+S3.4 & Documentación continua del sprint \\ \hline
+% --- Sprint 4 ---
+\multicolumn{2}{l}{\textbf{Sprint 4: modelado (HU5)}} \\
+S4.1 & Desarrollo del modelo físico-matemático del ciclista \\
+S4.2 & Implementación de la simulación de ajustes posturales \\
+S4.3 & Documentación continua del sprint \\ \hline
+% --- Sprint 5 ---
+\multicolumn{2}{l}{\textbf{Sprint 5: optimización y ui (HU6, HU9)}} \\
+S5.1 & Investigación y selección de librería para optimización genética \\
+S5.2 & Definición de la función de fitness multiobjetivo \\
+S5.3 & Desarrollo de interfaz de usuario para la entrada de datos \\
+S5.4 & Documentación continua del sprint \\ \hline
+% --- Sprint 6 ---
+\multicolumn{2}{l}{\textbf{Sprint 6: implementación de optimización (HU6, HU7)}} \\
+S6.1 & Implementación del algoritmo genético para la optimización \\
+S6.2 & Definición de la influencia de datos de entrada en el optimizador \\
+S6.3 & Documentación continua del sprint \\ \hline
+% --- Sprint 7 ---
+\multicolumn{2}{l}{\textbf{Sprint 7: personalización y reportes (HU7, HU8)}} \\
+S7.1 & Integración de variables de personalización en el modelo \\
+S7.2 & Diseño de la estructura y plantilla del reporte en PDF \\
+S7.3 & Desarrollo del script para la generación automática del reporte \\
+S7.4 & Documentación continua del sprint \\ \hline
+% --- Sprint 8 ---
+\multicolumn{2}{l}{\textbf{Sprint 8: pruebas (HU11)}} \\
+S8.1 & Creación de un conjunto de datos de prueba con casos conocidos \\
+S8.2 & Escritura de pruebas de integración para el flujo completo \\
+S8.3 & Documentación continua del sprint \\ \hline
+% --- Sprint 9 ---
+\multicolumn{2}{l}{\textbf{Sprint 9: funcionalidades extra (HU10)}} \\
+S9.1 & Implementación de guardado y carga de sesiones de análisis \\
+S9.2 & Desarrollo de reporte comparativo entre sesiones \\
+S9.3 & Documentación continua del sprint \\ \hline
+% --- Sprint 10 ---
+\multicolumn{2}{l}{\textbf{Sprint 10: redacción de memoria}} \\
+S10.1 & Redacción de secciones iniciales e intermedias de la memoria \\
+S10.2 & Revisión y ajustes con el tutor \\ \hline
+% --- Sprint 11 ---
+\multicolumn{2}{l}{\textbf{Sprint 11: cierre de proyecto}} \\
+S11.1 & Redacción final y revisión completa de la memoria \\
+S11.2 & Preparación de la presentación y material de defensa \\
+\end{longtable}
+
+\vspace{0.5cm}
+
+\begin{ganttchart}[
+    hgrid,
+    vgrid,
+    x unit=0.6cm, 
+    y unit title=0.7cm,
+    y unit chart=0.45cm,
+    bar label node/.append style={align=left, font=\bfseries\scriptsize}, % ID de tarea en negrita
+    group label node/.append style={align=left, font=\small\bfseries},
+    bar height=0.6,
+    group height=0.7,
+    group/.append style={fill=groupgray},
+    bar/.append style={fill=techblue},
+    group top shift=0.1,
+    bar top shift=0.2,
+    title label font=\bfseries
+  ]{1}{24}
+
+\gantttitle{Cronograma del proyecto por sprints (semanas)}{24} \\
+\gantttitlelist{1,...,24}{1}
+
+% Los títulos de grupo y las etiquetas de barra ahora están corregidos y abreviados.
+\ganttgroup{Sprint 0}{1}{2} \\
+\ganttbar[bar/.append style={fill=nontechgreen}]{S0.1}{1}{2} \\
+\ganttbar[bar/.append style={fill=nontechgreen}]{S0.2}{1}{2} \\
+
+\ganttgroup{Sprint 1}{3}{4} \\
+\ganttbar{S1.1}{3}{3} \\
+\ganttbar{S1.2}{3}{4} \\
+\ganttbar[bar/.append style={fill=nontechgreen}]{S1.3}{3}{4} \\
+
+\ganttgroup{Sprint 2}{5}{6} \\
+\ganttbar{S2.1}{5}{6} \\
+\ganttbar{S2.2}{5}{5} \\
+\ganttbar{S2.3}{6}{6} \\
+\ganttbar[bar/.append style={fill=nontechgreen}]{S2.4}{5}{6} \\
+
+\ganttgroup{Sprint 3}{7}{8} \\
+\ganttbar{S3.1}{7}{7} \\
+\ganttbar{S3.2}{7}{8} \\
+\ganttbar{S3.3}{8}{8} \\
+\ganttbar[bar/.append style={fill=nontechgreen}]{S3.4}{7}{8} \\
+
+\ganttgroup{Sprint 4}{9}{10} \\
+\ganttbar{S4.1}{9}{10} \\
+\ganttbar{S4.2}{9}{10} \\
+\ganttbar[bar/.append style={fill=nontechgreen}]{S4.3}{9}{10} \\
+
+\ganttgroup{Sprint 5}{11}{12} \\
+\ganttbar{S5.1}{11}{11} \\
+\ganttbar{S5.2}{11}{12} \\
+\ganttbar{S5.3}{12}{12} \\
+\ganttbar[bar/.append style={fill=nontechgreen}]{S5.4}{11}{12} \\
+
+\ganttgroup{Sprint 6}{13}{14} \\
+\ganttbar{S6.1}{13}{14} \\
+\ganttbar{S6.2}{13}{14} \\
+\ganttbar[bar/.append style={fill=nontechgreen}]{S6.3}{13}{14} \\
+
+\ganttgroup{Sprint 7}{15}{16} \\
+\ganttbar{S7.1}{15}{16} \\
+\ganttbar{S7.2}{15}{15} \\
+\ganttbar{S7.3}{16}{16} \\
+\ganttbar[bar/.append style={fill=nontechgreen}]{S7.4}{15}{16} \\
+
+\ganttgroup{Sprint 8}{17}{18} \\
+\ganttbar{S8.1}{17}{18} \\
+\ganttbar{S8.2}{17}{18} \\
+\ganttbar[bar/.append style={fill=nontechgreen}]{S8.3}{17}{18} \\
+
+\ganttgroup{Sprint 9}{19}{20} \\
+\ganttbar{S9.1}{19}{20} \\
+\ganttbar{S9.2}{19}{20} \\
+\ganttbar[bar/.append style={fill=nontechgreen}]{S9.3}{19}{20} \\
+
+\ganttgroup{Sprint 10}{21}{22} \\
+\ganttbar[bar/.append style={fill=nontechgreen}]{S10.1}{21}{22} \\
+\ganttbar[bar/.append style={fill=nontechgreen}]{S10.2}{21}{22} \\
+
+\ganttgroup{Sprint 11}{23}{24} \\
+\ganttbar[bar/.append style={fill=nontechgreen}]{S11.1}{23}{24} \\
+\ganttbar[bar/.append style={fill=nontechgreen}]{S11.2}{23}{24} \\
+
+\ganttmilestone[milestone/.append style={fill=red}]{E.F.}{24}
+\end{ganttchart}
 
 \section{12. Normativa y cumplimiento de datos (gobernanza)}
 
