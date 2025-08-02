@@ -975,85 +975,81 @@ Se tomarán medidas de mitigación en los riesgos cuyos números de RPN iniciale
 \section{14. Sprint Review}
 \label{sec:sprint_review}
 
-La revisión de sprint (\emph{Sprint Review}) es una práctica fundamental en metodologías ágiles. Consiste en revisar y evaluar lo que se ha completado al finalizar un sprint. En esta instancia, se presentan los avances y se verifica si las funcionalidades cumplen con los criterios de aceptación establecidos. También se identifican entregables parciales y se consideran ajustes si es necesario.
+\renewcommand{\arraystretch}{1.8}
+\begin{xltabular}{\linewidth}{| X | X | X | X | X |}
 
-Aunque el proyecto aún se encuentre en etapa de planificación, esta sección permite proyectar cómo se evaluarán las funcionalidades más importantes del backlog. Esta mirada anticipada favorece la planificación enfocada en valor y permite reflexionar sobre posibles obstáculos.
-
-\textbf{Objetivo:} anticipar cómo se evaluará el avance del proyecto a medida que se desarrollen las funcionalidades, utilizando como base al menos cuatro historias de usuario del \emph{Product Backlog}.
-
-
-Seleccionar al menos 4 HU del Product Backlog. Para cada una, completar la siguiente tabla de revisión proyectada:
-
-\textbf{Formato sugerido:}
-\begin{table}[htpb]
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|>{\raggedright\arraybackslash}m{2.5cm}|
-                >{\raggedright\arraybackslash}m{2.3cm}|
-                >{\raggedright\arraybackslash}m{3cm}|
-                >{\raggedright\arraybackslash}m{3cm}|
-                >{\raggedright\arraybackslash}m{3cm}|}
+\caption{Revisión de sprint proyectada.}
+\label{tab:sprint_review_proyectada}\\
 \hline
 \rowcolor[HTML]{CCCCCC}
-\textbf{HU seleccionada} & \textbf{Tareas asociadas} & \textbf{Entregable esperado} & \textbf{¿Cómo sabrás que está cumplida?} & \textbf{Observaciones o riesgos} \\
+HU seleccionada & Tareas asociadas & Entregable esperado & ¿Cómo sabrás que está cumplida? & Observaciones o riesgos \\
 \hline
-                         & Tarea 1 &                             &                                           &                                     \\ \cline{2-2}
-\multirow{-2}{=}{HU1}    & Tarea 2 & \multirow{-2}{=}{Módulo funcional} & \multirow{-2}{=}{Cumple criterios de aceptación definidos} & \multirow{-2}{=}{Falta validar con el tutor} \\
+\endfirsthead
+
+\multicolumn{5}{c}{\tablename\ \thetable{} -- continuación de la página anterior} \\
 \hline
-                         & Tarea 1 &                             &                                           &                                     \\ \cline{2-2}
-\multirow{-2}{=}{HU3}    & Tarea 2 & \multirow{-2}{=}{Reporte generado} & \multirow{-2}{=}{Exportación disponible y clara} & \multirow{-2}{=}{Requiere datos reales} \\
+\rowcolor[HTML]{CCCCCC}
+HU seleccionada & Tareas asociadas & Entregable esperado & ¿Cómo sabrás que está cumplida? & Observaciones o riesgos \\
 \hline
-                         & Tarea 1 &                             &                                           &                                     \\ \cline{2-2}
-\multirow{-2}{=}{HU5}    & Tarea 2 & \multirow{-2}{=}{Panel de gestión} & \multirow{-2}{=}{Roles diferenciados operativos} & \multirow{-2}{=}{Riesgo en integración} \\
+\endhead
+
 \hline
-                         & Tarea 1 &                             &                                           &                                     \\ \cline{2-2}
-\multirow{-2}{=}{HU7}    & Tarea 2 & \multirow{-2}{=}{Informe trimestral} & \multirow{-2}{=}{PDF con gráficos y evolución} & \multirow{-2}{=}{Puede faltar tiempo para ajustes} \\
+\multicolumn{5}{r}{{Continúa en la página siguiente}} \\
+\endfoot
+
 \hline
-\end{tabular}
-\end{table}
+\endlastfoot
+
+
+HU3: Obtener puntos clave del cuerpo mediante visión por computadora.
+ & - Investigar modelos de pose. \newline - Implementar extracción de coordenadas. \newline - Crear visualizador.
+ & Un módulo que procesa un video y exporta las coordenadas 2D del esqueleto en un formato de datos estructurado (CSV o JSON).
+ & Se cumple al verificar que los puntos clave se detectan con precisión en videos de prueba y que el esqueleto superpuesto es coherente con la postura del ciclista.
+ & La precisión del modelo preentrenado puede ser insuficiente. Podría ser necesario un reentrenamiento (fine-tuning), lo que aumentaría el alcance del proyecto. \\
+\hline
+HU6: Modelar un algoritmo de optimización multiobjetivo.
+ & - Investigar librerías de optimización. \newline - Definir la función de fitness multiobjetivo. \newline - Implementar el algoritmo genético.
+ & Un script funcional que recibe datos biomecánicos y devuelve un conjunto de soluciones óptimas (frente de Pareto) para la configuración de la bicicleta.
+ & Se comprueba que el algoritmo converge en un tiempo razonable. Las soluciones generadas deben ser físicamente lógicas y mostrar un claro compromiso entre los objetivos.
+ & La definición de la función de fitness es crítica y compleja. Un mal balance puede generar resultados inútiles. El ajuste de los hiperparámetros del algoritmo puede consumir mucho tiempo. \\
+\hline
+HU8: Recibir un reporte claro con las recomendaciones.
+ & - Diseñar la estructura del reporte en PDF. \newline - Desarrollar el script de generación automática.
+ & Un archivo PDF generado automáticamente. Debe contener las recomendaciones de ajuste, gráficos de la postura actual contra la recomendada y métricas clave.
+ & Se valida si el PDF se genera correctamente, es legible y presenta los datos de forma clara para un ciclista no experto. Los datos deben coincidir con la salida del optimizador.
+ & La automatización de gráficos en PDF puede tener desafíos técnicos. El diseño debe priorizar la claridad sobre la cantidad de datos para no abrumar al usuario. \\
+\hline
+HU10: Reevaluar la postura para refinar la optimización.
+ & - Implementar el guardado y la carga de sesiones. \newline - Desarrollar el reporte comparativo.
+ & Un módulo funcional que permite cargar una sesión previa y generar un reporte que compara las métricas y posturas "antes" y "después" de los ajustes.
+ & Se verifica al cargar una sesión, ejecutar un nuevo análisis y confirmar que el reporte comparativo muestra los datos de ambas sesiones de forma correcta.
+ & Requiere un sistema robusto para almacenar los datos de las sesiones. La validez de la comparación depende de que el usuario siga el mismo protocolo de prueba en ambas mediciones. \\
+
+\end{xltabular}
 
 \section{15. Sprint Retrospective}    
 \label{sec:sprint_retro}
 
-La retrospectiva de sprint es una práctica orientada a la mejora continua. Al finalizar un sprint, el equipo (o el alumno, si trabaja de forma individual) reflexiona sobre lo que funcionó bien, lo que puede mejorarse y qué acciones concretas pueden implementarse para trabajar mejor en el futuro.
-
-Durante la cursada se propuso el uso de la \textbf{Estrella de la Retrospectiva}, que organiza la reflexión en torno a cinco ejes:
-
-\begin{itemize}
-\item  ¿Qué hacer más?
-\item  ¿Qué hacer menos?
-\item  ¿Qué mantener?
-\item  ¿Qué empezar a hacer?
-\item  ¿Qué dejar de hacer?
-\end{itemize}
-
-Aun en una etapa temprana, esta herramienta permite que el alumno planifique su forma de trabajar, identifique anticipadamente posibles dificultades y diseñe estrategias de organización personal.
-
-\textbf{Objetivo:} reflexionar sobre las condiciones iniciales del proyecto, identificando fortalezas, posibles dificultades y estrategias de mejora, incluso antes del inicio del desarrollo.
-
-
-Completar la siguiente tabla tomando como referencia los cinco ejes de la Estrella de la Retrospectiva (\emph{Starfish} o estrella de mar). Esta instancia te ayudará a definir buenas prácticas desde el inicio y prepararte para enfrentar el trabajo de forma organizada y flexible. Se deberá completar la tabla al menos para 3 sprints técnicos y 1 no técnico.
-
-\textbf{Formato sugerido:}
-
 \begin{table}[htpb]
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|>{\raggedright\arraybackslash}p{1.8cm}|
-                >{\raggedright\arraybackslash}p{2.3cm}|
-                >{\raggedright\arraybackslash}p{2.3cm}|
-                >{\raggedright\arraybackslash}p{2.3cm}|
-                >{\raggedright\arraybackslash}p{2.3cm}|
-                >{\raggedright\arraybackslash}p{2.3cm}|}
+\renewcommand{\arraystretch}{1.5}
+\centering
+\begin{tabular}{|>{\raggedright\arraybackslash}p{2.5cm}|
+                >{\raggedright\arraybackslash}p{2.2cm}|
+                >{\raggedright\arraybackslash}p{2.2cm}|
+                >{\raggedright\arraybackslash}p{2.2cm}|
+                >{\raggedright\arraybackslash}p{2.2cm}|
+                >{\raggedright\arraybackslash}p{2.2cm}|}
 \hline
 \rowcolor[HTML]{CCCCCC} 
-\textbf{Sprint tipo y N°} & \textbf{¿Qué hacer más?} & \textbf{¿Qué hacer menos?} & \textbf{¿Qué mantener?} & \textbf{¿Qué empezar a hacer?} & \textbf{¿Qué dejar de hacer?} \\
+Sprint tipo y N° & ¿Qué hacer más? & ¿Qué hacer menos? & ¿Qué mantener? & ¿Qué empezar a hacer? & ¿Qué dejar de hacer? \\
 \hline
-Sprint técnico - 1 & Validaciones continuas con el alumno & Cambios sin versión registrada & Pruebas con datos simulados & Documentar cambios propuestos & Ajustes sin análisis de impacto \\
+Sprint técnico - 1 (Adquisición de datos) & Pruebas de sincronización temprana entre cámara y sensores. & Intentos de escribir código perfecto desde el inicio. & El uso de un entorno de captura controlado (rodillo). & La creación de una bitácora de cada prueba de captura. & Asumir que los sensores se conectarán sin fallos. \\
 \hline
-Sprint técnico - 2 & Verificar configuraciones en múltiples escenarios & Modificar parámetros sin guardar historial & Perfiles reutilizables & Usar logs para configuración & Repetir pruebas manuales innecesarias \\
+Sprint técnico - 5 (Optimización y UI) & Investigaciones de librerías de optimización antes de la selección. & El trabajo en la interfaz de usuario antes de tener el modelo funcional. & Las reuniones regulares con el tutor para validar el enfoque. & El uso de datos simulados para probar el algoritmo. & Subestimar la complejidad de la función de fitness. \\
 \hline
-Sprint técnico - 8 & Comparar correlaciones con casos previos & Cambiar parámetros sin justificar & Revisión cruzada de métricas & Anotar configuraciones usadas & Trabajar sin respaldo de datos \\
+Sprint técnico - 8 (Pruebas) & La escritura de pruebas de integración que validen el flujo completo. & La ejecución de pruebas solo con casos felices y datos perfectos. & La estructura del proyecto que permite las pruebas unitarias. & La automatización de la ejecución del conjunto de pruebas. & Postergar la ejecución de las pruebas para el final. \\
 \hline
-Sprint no técnico - 12 (por ej.: ``Defensa'') & Ensayos orales con feedback & Cambiar contenidos en la memoria & Material visual claro & Dividir la presentación por bloques & Agregar gráficos difíciles de explicar \\
+Sprint no técnico - 10 (Redacción de memoria) & Dedicar bloques de tiempo fijos y exclusivos para la redacción. & La escritura de secciones largas sin un esquema previo. & La documentación continua generada durante los sprints. & El envío de borradores al tutor para obtener feedback temprano. & Posponer la creación de gráficos y tablas. \\
 \hline
 \end{tabular}
 \end{table}
