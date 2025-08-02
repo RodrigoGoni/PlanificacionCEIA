@@ -810,75 +810,167 @@ El marco legal principal es la ley 25.326 de Protección de Datos Personales de 
 En conclusión, el proyecto es viable desde el punto de vista legal y ético. Su ejecución se condiciona a la correcta y continua aplicación del marco de gobernanza de datos aquí descrito. Al centrarse en el uso de recursos propios en un entorno controlado, el proyecto tiene una gran ventaja para implementar correctamente estos controles.
 
 
+Aquí tienes el código LaTeX completo para tu sección de gestión de riesgos. Puedes copiarlo y pegarlo directamente en tu editor TeXmaker.
+
+Para que el código funcione correctamente, asegúrate de tener los siguientes paquetes cargados en el preámbulo de tu documento:
+
+
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
-\begin{consigna}{red}
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
- 
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
+\subsection*{a) Identificación de los riesgos y estimación de sus consecuencias}
+
+\subsubsection*{Riesgo 1: Complejidad técnica subestimada y desvío del alcance (scope creep)}
+
+El proyecto integra múltiples disciplinas complejas (visión por computadora, biomecánica, optimización con algoritmos genéticos y desarrollo de software). Existe el riesgo de que la interconexión de estos módulos o la dificultad de uno de ellos sea mayor a la estimada, lo que puede causar retrasos significativos o una expansión no controlada del alcance original.
 \begin{itemize}
-	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de (O). 
+  \item Severidad (s): 8.\\
+  Justificación: Si la complejidad se subestima, podría ser imposible completar funcionalidades clave del sistema (como el módulo de optimización) dentro del cronograma académico. Esto comprometería directamente la entrega del producto final y el cumplimiento de los objetivos centrales del proyecto.
+  \item Probabilidad de ocurrencia (o): 7.\\
+  Justificación: A pesar de contar con 4 años de experiencia, la naturaleza del proyecto es inherentemente investigativa y multidisciplinaria. Para un solo desarrollador, la probabilidad de encontrar obstáculos técnicos imprevistos en al menos una de las áreas es alta.
 \end{itemize}   
 
-Riesgo 2:
+\subsubsection*{Riesgo 2: Calidad y sincronización de datos deficiente}
+
+El núcleo del sistema depende de la recolección simultánea y precisa de datos de video, potencia, cadencia y frecuencia cardíaca. Un fallo en la sincronización temporal o la captura de datos de baja calidad (por ejemplo, videos con mala iluminación o sensores que se desconectan) invalida por completo los resultados del análisis.
 \begin{itemize}
-	\item Severidad (S): X.\\
-	Justificación...
-	\item Ocurrencia (O): Y.\\
-	Justificación...
+  \item Severidad (s): 9.\\
+  Justificación: Este riesgo es crítico. Si los datos de entrada son incorrectos ("basura entra, basura sale"), el modelo biomecánico y el optimizador generarán recomendaciones inútiles o, en el peor de los casos, perjudiciales para el ciclista. Esto invalida la premisa fundamental del proyecto.
+  \item Probabilidad de ocurrencia (o): 6.\\
+  Justificación: La probabilidad es moderadamente alta. Aunque se usará un entorno controlado, la tarea de asegurar una sincronización perfecta a nivel de milisegundos entre una cámara y múltiples sensores (usualmente Bluetooth/ANT+) es un desafío técnico conocido y propenso a fallos intermitentes.
 \end{itemize}
 
-Riesgo 3:
+\subsubsection*{Riesgo 3: Inexactitud del modelo de detección de pose preentrenado}
+
+El proyecto asume que un modelo preentrenado (como MediaPipe o Keypoint R-CNN) será suficientemente preciso para identificar los puntos articulares del ciclista. Si el modelo no tiene el rendimiento esperado en el contexto específico del ciclismo (vistas laterales, oclusiones parciales, movimiento rápido), el análisis cinemático será erróneo.
 \begin{itemize}
-	\item Severidad (S):  X.\\
-	Justificación...
-	\item Ocurrencia (O): Y.\\
-	Justificación...
+  \item Severidad (s): 8.\\
+  Justificación: La precisión de las coordenadas 2D de las articulaciones es la base para todo el cálculo de ángulos y el modelado biomecánico. Un error en esta etapa se propagaría y amplificaría en todo el sistema, lo que lleva a conclusiones y recomendaciones incorrectas.
+  \item Probabilidad de ocurrencia (o): 5.\\
+  Justificación: La probabilidad es media. Los modelos modernos son muy robustos, pero no fueron entrenados exclusivamente para el análisis biomecánico de ciclistas. Factores como la ropa holgada, ángulos de cámara no ideales o condiciones de luz variables pueden degradar su precisión de forma inesperada.
+\end{itemize}
+
+\subsubsection*{Riesgo 4: Dependencia de una única persona (key person risk)}
+
+El proyecto es desarrollado en su totalidad por una sola persona. Cualquier imprevisto personal, enfermedad, problema técnico bloqueante o incluso agotamiento (burnout) detendría por completo el progreso del proyecto, ya que no hay otro miembro del equipo que pueda continuar con las tareas.
+\begin{itemize}
+    \item Severidad (s): 10.\\
+    Justificación: La severidad es máxima. La continuidad del proyecto depende al 100\% de la disponibilidad y capacidad del único desarrollador. No existe un plan de contingencia humano para su reemplazo.
+    \item Probabilidad de ocurrencia (o): 4.\\
+    Justificación: Se asume que el desarrollador está comprometido y sano. Sin embargo, en un proyecto de varios meses, la probabilidad de que surja algún imprevisto personal o un periodo de agotamiento no es despreciable, por lo que se asigna una probabilidad baja-moderada.
+\end{itemize}
+
+\subsubsection*{Riesgo 5: Dificultad para validar objetivamente las recomendaciones}
+
+El proyecto tiene como objetivo mejorar el rendimiento y el confort, pero la validación de esta mejora es intrínsecamente difícil. Las métricas objetivas (como la FC a una potencia dada) pueden verse afectadas por muchos factores externos (fatiga, temperatura, estado de ánimo), y las métricas subjetivas (como la percepción del esfuerzo) son difíciles de cuantificar.
+\begin{itemize}
+    \item Severidad (s): 7.\\
+    Justificación: Si no se puede demostrar con un grado razonable de certeza que las recomendaciones del sistema son efectivas, el proyecto pierde gran parte de su valor práctico y queda en un plano puramente teórico, lo que afectaría de forma negativa su evaluación final.
+    \item Probabilidad de ocurrencia (o): 6.\\
+    Justificación: La probabilidad de encontrar dificultades en la validación es moderadamente alta. Es un desafío conocido en la biomecánica deportiva el aislamiento del efecto de un solo cambio (el ajuste de la bicicleta) de todas las demás variables que influyen en el rendimiento de un atleta.
 \end{itemize}
 
 
-b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
+\subsection*{b) Tabla de gestión de riesgos}
 
 \begin{table}[htpb]
 \centering
+\caption{Tabla de gestión de riesgos}
+\label{tab:riesgos}
 \begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
+1. Complejidad técnica y scope creep & 8 & 7 & 56 & 8 & 4 & 32 \\ \hline
+2. Calidad y sincronización de datos & 9 & 6 & 54 & 9 & 2 & 18 \\ \hline
+3. Inexactitud del modelo de pose & 8 & 5 & 40 & 5 & 3 & 15 \\ \hline
+4. Dependencia de una única persona & 10 & 4 & 40 & 7 & 4 & 28 \\ \hline
+5. Dificultad en la validación & 7 & 6 & 42 & 5 & 4 & 20 \\ \hline
 \end{tabularx}%
 \end{table}
 
-Criterio adoptado: 
+Criterio adoptado:
 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN iniciales sean mayores a 35. Según este criterio, todos los riesgos identificados requieren un plan de mitigación.
 
-Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
+\vspace{0.5cm}
 
-c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
+\subsection*{c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido}
  
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
+\subsubsection*{Riesgo 1: Complejidad técnica y "scope creep"}
+\begin{itemize}
+    \item Plan de mitigación:
+    \begin{enumerate}
+      \item Priorización del MVP (Producto Mínimo Viable): Enfocar los primeros sprints en el desarrollo de un \textit{pipeline} completo pero simple: captura de video y datos de sensores, procesamiento con el modelo de pose, aplicación de un modelo de optimización básico y generación de un reporte simple.
+      \item Gestión estricta del alcance: Seguir de forma rigurosa el \textit{product backlog} definido. Cualquier nueva idea o mejora se registrará, pero no se implementará hasta que el MVP sea funcional.
+      \item Reuniones de seguimiento semanales: Realizar reuniones obligatorias con el director del proyecto para la revisión del progreso, la discusión de bloqueos y la garantía de que el proyecto no se desvíe de los objetivos definidos.
+    \end{enumerate}
+  \item Nueva asignación de s* y o*, con su respectiva justificación:
   \begin{itemize}
-	\item Severidad (S*): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O*): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
-	\end{itemize}
+  \item Severidad (s*): 8. La severidad intrínseca del riesgo no cambia, ya que el proyecto sigue con su complejidad.
+  \item Probabilidad de ocurrencia (o*): 4. La probabilidad de que el riesgo impacte de forma negativa se reduce de manera significativa. La priorización del MVP asegura una entrega funcional y las reuniones con el supervisor actúan como un mecanismo de control para evitar el \textit{scope creep}.
+  \end{itemize}
+\end{itemize}
 
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
- 
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+\subsubsection*{Riesgo 2: Calidad y sincronización de datos deficiente}
+\begin{itemize}
+    \item Plan de mitigación:
+    \begin{enumerate}
+        \item Protocolo de captura estandarizado: Definir y documentar un protocolo estricto para la toma de datos: posición fija de la cámara, uso de la misma iluminación artificial, vestimenta ajustada y de color sólido para el ciclista.
+        \item Script de validación de sincronización: Desarrollar un script específico (como parte de HU2) que capture una ráfaga corta de datos y video, y genere un gráfico para la verificación visual de la alineación de los picos de potencia con el movimiento de pedaleo en el video. Este script se ejecutará antes de cada sesión de grabación principal.
+        \item Módulo de chequeo automático: Implementar funciones en el preprocesamiento (HU4) que alerten automáticamente sobre datos faltantes, valores atípicos o desincronizaciones evidentes.
+    \end{enumerate}
+    \item Nueva asignación de s* y o*, con su respectiva justificación:
+    \begin{itemize}
+        \item Severidad (s*): 9. La severidad se mantiene. Datos de mala calidad aún serían catastróficos.
+        \item Probabilidad de ocurrencia (o*): 2. La probabilidad se reduce de forma drástica. El protocolo y la validación previa a la captura minimizan la posibilidad de recolectar datos inutilizables, lo que transforma un riesgo probable en uno muy poco probable.
+    \end{itemize}
+\end{itemize}
 
-\end{consigna}
+\subsubsection*{Riesgo 3: Inexactitud del modelo de detección de pose preentrenado}
+\begin{itemize}
+    \item Plan de mitigación:
+    \begin{enumerate}
+        \item Evaluación comparativa: En la fase inicial (HU3), investigar y probar al menos dos modelos de pose distintos (ej. MediaPipe BlazePose, OpenPose) con videos propios para determinar cuál ofrece mayor precisión y estabilidad en un entorno de ciclismo.
+        \item Visualización para verificación: Priorizar el desarrollo de la función que superpone el esqueleto detectado sobre el video. Esto permitirá una verificación visual rápida y constante de la calidad de la detección en cada etapa del desarrollo.
+        \item Contingencia de "fine-tuning": Como plan de contingencia, si la precisión no es suficiente, se contempla la posibilidad de un \textit{fine-tuning} del modelo elegido sobre un pequeño set de imágenes de ciclistas con etiquetado manual.
+    \end{enumerate}
+    \item Nueva asignación de s* y o*, con su respectiva justificación:
+    \begin{itemize}
+        \item Severidad (s*): 5. La severidad se reduce. Al tener un plan de contingencia claro (prueba de otro modelo o reentrenamiento), el riesgo deja de ser un posible bloqueante total del proyecto y se convierte en un problema técnico con solución, aunque implique más trabajo.
+        \item Probabilidad de ocurrencia (o*): 3. La probabilidad de que un modelo impreciso arruine el proyecto disminuye, ya que el plan de mitigación aborda el problema de frente mediante la evaluación y la preparación para una solución alternativa.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{Riesgo 4: Dependencia de una única persona (key person risk)}
+\begin{itemize}
+    \item Plan de mitigación:
+    \begin{enumerate}
+        \item Documentación y control de versiones riguroso: Mantener toda la documentación, código y resultados en un repositorio de Git (GitHub/GitLab) con \textit{commits} frecuentes y descriptivos. El proyecto ya cuenta con una documentación muy detallada (WBS, Sprints) que se debe mantener actualizada.
+        \item Transferencia de conocimiento al supervisor: En las reuniones semanales, no solo reportar el estado, sino también explicar la arquitectura del código y las decisiones de diseño. Esto asegura que el director de carrera tenga un conocimiento suficiente para orientar o incluso auditar el código si fuera necesario.
+        \item Planificación sostenible: Distribuir la carga de trabajo de manera realista a lo largo de los sprints para evitar el agotamiento, con la inclusión de semanas de "colchón" o para tareas de refactorización.
+    \end{enumerate}
+    \item Nueva asignación de s* y o*, con su respectiva justificación:
+    \begin{itemize}
+        \item Severidad (s*): 7. La severidad se reduce. Aunque una ausencia prolongada aún sería muy grave, la documentación y el conocimiento del supervisor harían el proyecto recuperable y no una pérdida total.
+        \item Probabilidad de ocurrencia (o*): 4. La probabilidad del evento externo no cambia, pero se reduce la probabilidad de interrupción por causas controlables como el \textit{burnout}.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{Riesgo 5: Dificultad para validar objetivamente las recomendaciones}
+\begin{itemize}
+    \item Plan de mitigación:
+    \begin{enumerate}
+        \item Protocolo de validación A/B controlado: Definir un protocolo de prueba estricto: realizar una sesión de medición con la configuración inicial (A), aplicar los ajustes recomendados, permitir un breve periodo de adaptación, y realizar una segunda sesión idéntica (B). Ambas sesiones deben tener la misma duración y perfil de potencia en el rodillo.
+        \item Métricas combinadas: No depender de una sola métrica. Evaluar el éxito con la combinación de la reducción de la FC a potencia constante, la reducción de la variabilidad de ángulos clave (obtenido del análisis cinemático) y un cuestionario estructurado de confort/dolor (escala de 1 a 10 para rodillas, espalda, hombros).
+        \item Aceptación de la limitación: Reconocer explícitamente las limitaciones de la validación en la memoria final del proyecto y presentar los resultados como evidencia indicativa de la efectividad del modelo, en lugar de una prueba absoluta.
+    \end{enumerate}
+    \item Nueva asignación de s* y o*, con su respectiva justificación:
+    \begin{itemize}
+        \item Severidad (s*): 5. La severidad se reduce. Con la gestión de expectativas y un método de validación robusto (aunque no perfecto), un resultado no concluyente no significa el fracaso del proyecto, sino un hallazgo para analizar.
+        \item Probabilidad de ocurrencia (o*): 4. La probabilidad de no poder validar nada se reduce. Un protocolo estructurado y el uso de métricas combinadas aumentan la probabilidad de detectar una señal positiva y obtener una conclusión significativa.
+    \end{itemize}
+\end{itemize}
 
 \section{14. Sprint Review}
 \label{sec:sprint_review}
