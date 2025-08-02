@@ -105,6 +105,9 @@
 \definecolor{groupgray}{RGB}{220,220,220}
 \definecolor{linkred}{RGB}{165,0,33}
 \usepackage{booktabs}
+\usepackage{array}
+\usepackage{xltabular} 
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
 
 %\usepackage{tikz}
 %\usetikzlibrary{arrows, arrows.meta, calc, positioning, quotes, shapes}
