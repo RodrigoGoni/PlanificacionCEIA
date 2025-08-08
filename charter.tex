@@ -817,11 +817,6 @@ El marco legal principal es la ley 25.326 de Protección de Datos Personales de 
 En conclusión, el proyecto es viable desde el punto de vista legal y ético. Su ejecución se condiciona a la correcta y continua aplicación del marco de gobernanza de datos aquí descrito. Al centrarse en el uso de recursos propios en un entorno controlado, el proyecto tiene una gran ventaja para implementar correctamente estos controles.
 
 
-Aquí tienes el código LaTeX completo para tu sección de gestión de riesgos. Puedes copiarlo y pegarlo directamente en tu editor TeXmaker.
-
-Para que el código funcione correctamente, asegúrate de tener los siguientes paquetes cargados en el preámbulo de tu documento:
-
-
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
@@ -904,13 +899,13 @@ Se tomarán medidas de mitigación en los riesgos cuyos números de RPN iniciale
 
 \subsection*{c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido}
  
-\subsubsection*{Riesgo 1: Complejidad técnica y "scope creep"}
+\subsubsection*{Riesgo 1: complejidad técnica y "scope creep"}
 \begin{itemize}
     \item Plan de mitigación:
     \begin{enumerate}
-      \item Priorización del MVP (Producto Mínimo Viable): Enfocar los primeros sprints en el desarrollo de un \textit{pipeline} completo pero simple: captura de video y datos de sensores, procesamiento con el modelo de pose, aplicación de un modelo de optimización básico y generación de un reporte simple.
-      \item Gestión estricta del alcance: Seguir de forma rigurosa el \textit{product backlog} definido. Cualquier nueva idea o mejora se registrará, pero no se implementará hasta que el MVP sea funcional.
-      \item Reuniones de seguimiento semanales: Realizar reuniones obligatorias con el director del proyecto para la revisión del progreso, la discusión de bloqueos y la garantía de que el proyecto no se desvíe de los objetivos definidos.
+      \item Priorización del MVP (Producto Mínimo Viable): enfocar los primeros sprints en el desarrollo de un \textit{pipeline} completo pero simple: captura de video y datos de sensores, procesamiento con el modelo de pose, aplicación de un modelo de optimización básico y generación de un reporte simple.
+      \item Gestión estricta del alcance: seguir de forma rigurosa el \textit{product backlog} definido. Cualquier nueva idea o mejora se registrará, pero no se implementará hasta que el MVP sea funcional.
+      \item Reuniones de seguimiento semanales: realizar reuniones obligatorias con el director del proyecto para la revisión del progreso, la discusión de bloqueos y la garantía de que el proyecto no se desvíe de los objetivos definidos.
     \end{enumerate}
   \item Nueva asignación de s* y o*, con su respectiva justificación:
   \begin{itemize}
@@ -919,13 +914,13 @@ Se tomarán medidas de mitigación en los riesgos cuyos números de RPN iniciale
   \end{itemize}
 \end{itemize}
 
-\subsubsection*{Riesgo 2: Calidad y sincronización de datos deficiente}
+\subsubsection*{Riesgo 2: calidad y sincronización de datos deficiente}
 \begin{itemize}
     \item Plan de mitigación:
     \begin{enumerate}
-        \item Protocolo de captura estandarizado: Definir y documentar un protocolo estricto para la toma de datos: posición fija de la cámara, uso de la misma iluminación artificial, vestimenta ajustada y de color sólido para el ciclista.
-        \item Script de validación de sincronización: Desarrollar un script específico (como parte de HU2) que capture una ráfaga corta de datos y video, y genere un gráfico para la verificación visual de la alineación de los picos de potencia con el movimiento de pedaleo en el video. Este script se ejecutará antes de cada sesión de grabación principal.
-        \item Módulo de chequeo automático: Implementar funciones en el preprocesamiento (HU4) que alerten automáticamente sobre datos faltantes, valores atípicos o desincronizaciones evidentes.
+        \item Protocolo de captura estandarizado: definir y documentar un protocolo estricto para la toma de datos: posición fija de la cámara, uso de la misma iluminación artificial, vestimenta ajustada y de color sólido para el ciclista.
+        \item Script de validación de sincronización: desarrollar un script específico (como parte de HU2) que capture una ráfaga corta de datos y video, y genere un gráfico para la verificación visual de la alineación de los picos de potencia con el movimiento de pedaleo en el video. Este script se ejecutará antes de cada sesión de grabación principal.
+        \item Módulo de chequeo automático: implementar funciones en el preprocesamiento (HU4) que alerten automáticamente sobre datos faltantes, valores atípicos o desincronizaciones evidentes.
     \end{enumerate}
     \item Nueva asignación de s* y o*, con su respectiva justificación:
     \begin{itemize}
@@ -934,13 +929,13 @@ Se tomarán medidas de mitigación en los riesgos cuyos números de RPN iniciale
     \end{itemize}
 \end{itemize}
 
-\subsubsection*{Riesgo 3: Inexactitud del modelo de detección de pose preentrenado}
+\subsubsection*{Riesgo 3: inexactitud del modelo de detección de pose preentrenado}
 \begin{itemize}
     \item Plan de mitigación:
     \begin{enumerate}
-        \item Evaluación comparativa: En la fase inicial (HU3), investigar y probar al menos dos modelos de pose distintos (ej. MediaPipe BlazePose, OpenPose) con videos propios para determinar cuál ofrece mayor precisión y estabilidad en un entorno de ciclismo.
-        \item Visualización para verificación: Priorizar el desarrollo de la función que superpone el esqueleto detectado sobre el video. Esto permitirá una verificación visual rápida y constante de la calidad de la detección en cada etapa del desarrollo.
-        \item Contingencia de "fine-tuning": Como plan de contingencia, si la precisión no es suficiente, se contempla la posibilidad de un \textit{fine-tuning} del modelo elegido sobre un pequeño set de imágenes de ciclistas con etiquetado manual.
+        \item Evaluación comparativa: en la fase inicial (HU3), investigar y probar al menos dos modelos de pose distintos (ej. MediaPipe BlazePose, OpenPose) con videos propios para determinar cuál ofrece mayor precisión y estabilidad en un entorno de ciclismo.
+        \item Visualización para verificación: priorizar el desarrollo de la función que superpone el esqueleto detectado sobre el video. Esto permitirá una verificación visual rápida y constante de la calidad de la detección en cada etapa del desarrollo.
+        \item Contingencia de "fine-tuning": como plan de contingencia, si la precisión no es suficiente, se contempla la posibilidad de un \textit{fine-tuning} del modelo elegido sobre un pequeño set de imágenes de ciclistas con etiquetado manual.
     \end{enumerate}
     \item Nueva asignación de s* y o*, con su respectiva justificación:
     \begin{itemize}
@@ -949,13 +944,13 @@ Se tomarán medidas de mitigación en los riesgos cuyos números de RPN iniciale
     \end{itemize}
 \end{itemize}
 
-\subsubsection*{Riesgo 4: Dependencia de una única persona (key person risk)}
+\subsubsection*{Riesgo 4: dependencia de una única persona (key person risk)}
 \begin{itemize}
     \item Plan de mitigación:
     \begin{enumerate}
-        \item Documentación y control de versiones riguroso: Mantener toda la documentación, código y resultados en un repositorio de Git (GitHub/GitLab) con \textit{commits} frecuentes y descriptivos. El proyecto ya cuenta con una documentación muy detallada (WBS, Sprints) que se debe mantener actualizada.
-        \item Transferencia de conocimiento al supervisor: En las reuniones semanales, no solo reportar el estado, sino también explicar la arquitectura del código y las decisiones de diseño. Esto asegura que el director de carrera tenga un conocimiento suficiente para orientar o incluso auditar el código si fuera necesario.
-        \item Planificación sostenible: Distribuir la carga de trabajo de manera realista a lo largo de los sprints para evitar el agotamiento, con la inclusión de semanas de "colchón" o para tareas de refactorización.
+        \item Documentación y control de versiones riguroso: mantener toda la documentación, código y resultados en un repositorio de Git (GitHub/GitLab) con \textit{commits} frecuentes y descriptivos. El proyecto ya cuenta con una documentación muy detallada (WBS, Sprints) que se debe mantener actualizada.
+        \item Transferencia de conocimiento al supervisor: en las reuniones semanales, no solo reportar el estado, sino también explicar la arquitectura del código y las decisiones de diseño. Esto asegura que el director de carrera tenga un conocimiento suficiente para orientar o incluso auditar el código si fuera necesario.
+        \item Planificación sostenible: distribuir la carga de trabajo de manera realista a lo largo de los sprints para evitar el agotamiento, con la inclusión de semanas de "colchón" o para tareas de refactorización.
     \end{enumerate}
     \item Nueva asignación de s* y o*, con su respectiva justificación:
     \begin{itemize}
@@ -964,13 +959,13 @@ Se tomarán medidas de mitigación en los riesgos cuyos números de RPN iniciale
     \end{itemize}
 \end{itemize}
 
-\subsubsection*{Riesgo 5: Dificultad para validar objetivamente las recomendaciones}
+\subsubsection*{Riesgo 5: dificultad para validar objetivamente las recomendaciones}
 \begin{itemize}
     \item Plan de mitigación:
     \begin{enumerate}
-        \item Protocolo de validación A/B controlado: Definir un protocolo de prueba estricto: realizar una sesión de medición con la configuración inicial (A), aplicar los ajustes recomendados, permitir un breve periodo de adaptación, y realizar una segunda sesión idéntica (B). Ambas sesiones deben tener la misma duración y perfil de potencia en el rodillo.
-        \item Métricas combinadas: No depender de una sola métrica. Evaluar el éxito con la combinación de la reducción de la FC a potencia constante, la reducción de la variabilidad de ángulos clave (obtenido del análisis cinemático) y un cuestionario estructurado de confort/dolor (escala de 1 a 10 para rodillas, espalda, hombros).
-        \item Aceptación de la limitación: Reconocer explícitamente las limitaciones de la validación en la memoria final del proyecto y presentar los resultados como evidencia indicativa de la efectividad del modelo, en lugar de una prueba absoluta.
+        \item Protocolo de validación A/B controlado: definir un protocolo de prueba estricto: realizar una sesión de medición con la configuración inicial (A), aplicar los ajustes recomendados, permitir un breve periodo de adaptación, y realizar una segunda sesión idéntica (B). Ambas sesiones deben tener la misma duración y perfil de potencia en el rodillo.
+        \item Métricas combinadas: no depender de una sola métrica. Evaluar el éxito con la combinación de la reducción de la FC a potencia constante, la reducción de la variabilidad de ángulos clave (obtenido del análisis cinemático) y un cuestionario estructurado de confort/dolor (escala de 1 a 10 para rodillas, espalda, hombros).
+        \item Aceptación de la limitación: reconocer explícitamente las limitaciones de la validación en la memoria final del proyecto y presentar los resultados como evidencia indicativa de la efectividad del modelo, en lugar de una prueba absoluta.
     \end{enumerate}
     \item Nueva asignación de s* y o*, con su respectiva justificación:
     \begin{itemize}
@@ -1008,25 +1003,25 @@ HU seleccionada & Tareas asociadas & Entregable esperado & ¿Cómo sabrás que e
 \endlastfoot
 
 
-HU3: Obtener puntos clave del cuerpo mediante visión por computadora.
+HU3: obtener puntos clave del cuerpo mediante visión por computadora.
  & - Investigar modelos de pose. \newline - Implementar extracción de coordenadas. \newline - Crear visualizador.
  & Un módulo que procesa un video y exporta las coordenadas 2D del esqueleto en un formato de datos estructurado (CSV o JSON).
  & Se cumple al verificar que los puntos clave se detectan con precisión en videos de prueba y que el esqueleto superpuesto es coherente con la postura del ciclista.
  & La precisión del modelo preentrenado puede ser insuficiente. Podría ser necesario un reentrenamiento (fine-tuning), lo que aumentaría el alcance del proyecto. \\
 \hline
-HU6: Modelar un algoritmo de optimización multiobjetivo.
+HU6: modelar un algoritmo de optimización multiobjetivo.
  & - Investigar librerías de optimización. \newline - Definir la función de fitness multiobjetivo. \newline - Implementar el algoritmo genético.
  & Un script funcional que recibe datos biomecánicos y devuelve un conjunto de soluciones óptimas (frente de Pareto) para la configuración de la bicicleta.
  & Se comprueba que el algoritmo converge en un tiempo razonable. Las soluciones generadas deben ser físicamente lógicas y mostrar un claro compromiso entre los objetivos.
  & La definición de la función de fitness es crítica y compleja. Un mal balance puede generar resultados inútiles. El ajuste de los hiperparámetros del algoritmo puede consumir mucho tiempo. \\
 \hline
-HU8: Recibir un reporte claro con las recomendaciones.
+HU8: recibir un reporte claro con las recomendaciones.
  & - Diseñar la estructura del reporte en PDF. \newline - Desarrollar el script de generación automática.
  & Un archivo PDF generado automáticamente. Debe contener las recomendaciones de ajuste, gráficos de la postura actual contra la recomendada y métricas clave.
  & Se valida si el PDF se genera correctamente, es legible y presenta los datos de forma clara para un ciclista no experto. Los datos deben coincidir con la salida del optimizador.
  & La automatización de gráficos en PDF puede tener desafíos técnicos. El diseño debe priorizar la claridad sobre la cantidad de datos para no abrumar al usuario. \\
 \hline
-HU10: Reevaluar la postura para refinar la optimización.
+HU10: reevaluar la postura para refinar la optimización.
  & - Implementar el guardado y la carga de sesiones. \newline - Desarrollar el reporte comparativo.
  & Un módulo funcional que permite cargar una sesión previa y generar un reporte que compara las métricas y posturas "antes" y "después" de los ajustes.
  & Se verifica al cargar una sesión, ejecutar un nuevo análisis y confirmar que el reporte comparativo muestra los datos de ambas sesiones de forma correcta.
@@ -1050,13 +1045,13 @@ HU10: Reevaluar la postura para refinar la optimización.
 \rowcolor[HTML]{CCCCCC} 
 Sprint tipo y N° & ¿Qué hacer más? & ¿Qué hacer menos? & ¿Qué mantener? & ¿Qué empezar a hacer? & ¿Qué dejar de hacer? \\
 \hline
-Sprint técnico - 1 (Adquisición de datos) & Pruebas de sincronización temprana entre cámara y sensores. & Intentos de escribir código perfecto desde el inicio. & El uso de un entorno de captura controlado (rodillo). & La creación de una bitácora de cada prueba de captura. & Asumir que los sensores se conectarán sin fallos. \\
+Sprint técnico - 1 & Pruebas de sincronización temprana entre cámara y sensores. & Intentos de escribir código perfecto desde el inicio. & El uso de un entorno de captura controlado (rodillo). & La creación de una bitácora de cada prueba de captura. & Asumir que los sensores se conectarán sin fallos. \\
 \hline
-Sprint técnico - 5 (Optimización y UI) & Investigaciones de librerías de optimización antes de la selección. & El trabajo en la interfaz de usuario antes de tener el modelo funcional. & Las reuniones regulares con el tutor para validar el enfoque. & El uso de datos simulados para probar el algoritmo. & Subestimar la complejidad de la función de fitness. \\
+Sprint técnico - 5 & Investigaciones de librerías de optimización antes de la selección. & El trabajo en la interfaz de usuario antes de tener el modelo funcional. & Las reuniones regulares con el tutor para validar el enfoque. & El uso de datos simulados para probar el algoritmo. & Subestimar la complejidad de la función de fitness. \\
 \hline
-Sprint técnico - 8 (Pruebas) & La escritura de pruebas de integración que validen el flujo completo. & La ejecución de pruebas solo con casos felices y datos perfectos. & La estructura del proyecto que permite las pruebas unitarias. & La automatización de la ejecución del conjunto de pruebas. & Postergar la ejecución de las pruebas para el final. \\
+Sprint técnico - 8 & La escritura de pruebas de integración que validen el flujo completo. & La ejecución de pruebas solo con casos felices y datos perfectos. & La estructura del proyecto que permite las pruebas unitarias. & La automatización de la ejecución del conjunto de pruebas. & Postergar la ejecución de las pruebas para el final. \\
 \hline
-Sprint no técnico - 10 (Redacción de memoria) & Dedicar bloques de tiempo fijos y exclusivos para la redacción. & La escritura de secciones largas sin un esquema previo. & La documentación continua generada durante los sprints. & El envío de borradores al tutor para obtener feedback temprano. & Posponer la creación de gráficos y tablas. \\
+Sprint no técnico - 10 & Dedicar bloques de tiempo fijos y exclusivos para la redacción. & La escritura de secciones largas sin un esquema previo. & La documentación continua generada durante los sprints. & El envío de borradores al tutor para obtener feedback temprano. & Posponer la creación de gráficos y tablas. \\
 \hline
 \end{tabular}
 \end{table}
